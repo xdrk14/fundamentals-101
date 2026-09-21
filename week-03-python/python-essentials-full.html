@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en"><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"cred":"cookie","capabilities":{"artifact":"artifact.Kiow93e4.js","assets":"assets.DOAjpBS9.js","comments":"comments.DrhK3r8W.js","db":"db.zFlAA4qL.js","downloads":"downloads.axDW2QAi.js","embed":"embed.DcZf-TSv.js","endpoints":"endpoints.BPfoKaE1.js","mcp":"mcp.C8qKIFvQ.js","network":"network.B5UA9Su4.js","permissions":"permissions.DWFFeHI0.js","room":"room.BF1j0KPr.js","sample":"sample.C7KQQdQj.js","self":"artifact.Kiow93e4.js","user":"user.CCh6oTS_.js"},"transforms":"_transforms.DeQ5QuJ7.js","comments":"_comments.DUaNQZcg.js","translate":"_translate.DqxC5ek1.js","ldx":"_ldx.CqNtBrkk.js"}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </script><script>(function(){"use strict";function sr(t){return t==="cookie"||t==="query"?t:void 0}var Kn=3e5;function ir(t,e){try{const r=t("navigation")[0],n=[r.responseStart,r.redirectEnd-r.redirectStart,r.domContentLoadedEventStart,e(),r.connectEnd-r.domainLookupStart,r.responseStart-r.requestStart];r.requestStart>0||(n.length=4);for(let a=0;a<n.length;a++)if(n[a]>=0&&n[a]<=3e5)n[a]=n[a]|0;else{if(a<4)return;n.length=4}return n}catch{return}}var lr=["light","dark","system"],cr=/^[A-Za-z0-9_-]{1,64}$/,St=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ur=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function fr(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||ur.has(e)}var At="data-ldx-props";function dr(t,e){if(e.toLowerCase()===At)return!0;const r=t.getAttribute(At);if(r===null)return!1;try{const n=JSON.parse(r);if(n===null||typeof n!="object"||Array.isArray(n))return!0;const a=e.toLowerCase();return Object.keys(n).some(s=>s.toLowerCase()===a)}catch{return!0}}var Gn="http://www.w3.org/1999/xhtml",hr="http://www.w3.org/2000/svg",pr=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),mr=new Set(["script","style"]);function vr(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!pr.has(e):t.namespaceURI===hr?!mr.has(e):!1}function Ve(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function _r(t,e){const r=t.length,n=e.length;let a=0;for(;a<r&&a<n&&Ve(t.charCodeAt(a),e.charCodeAt(a));)a++;let s=0;for(;s<r-a&&s<n-a&&Ve(t.charCodeAt(r-1-s),e.charCodeAt(n-1-s));)s++;return{p:a,s}}function yr(t,e){const r=t.firstChild;if(t.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const n=r.data,a=n.length,s=e.length,{p:c,s:d}=_r(n,e);c===a&&d===0&&a===s||r.replaceData(c,a-c-d,e.slice(c,s-d));const O=r.data,w=t.ownerDocument.getSelection?.()??null,b=w!==null&&w.rangeCount>0&&(w.anchorNode===r||w.focusNode===r)?{anchor:w.anchorNode,anchorOffset:w.anchorOffset,focus:w.focusNode,focusOffset:w.focusOffset}:null;let m=-1,R=-1;for(let h=0;h<O.length&&h<e.length;h++){const p=O.charCodeAt(h),D=e.charCodeAt(h);p!==D&&Ve(p,D)&&(m<0&&(m=h),R=h)}const M=m>=0;if(M&&r.replaceData(m,R-m+1,e.slice(m,R+1)),M&&b!==null&&b.anchor!==null&&b.focus!==null)try{w.setBaseAndExtent(b.anchor,b.anchorOffset,b.focus,b.focusOffset)}catch{}}var gr=new Set(["html","head","body","frameset"]);function wr(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&gr.has(t.localName)}function br(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!cr.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[r,n]of Object.entries(e.attrsSet))if(!St.test(r)||typeof n!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const r of e.attrsRemoved)if(typeof r!="string"||!St.test(r))return!1}return!0}function Er(t,e){if(t===null||typeof t!="object")return!1;const{seq:r,elements:n}=t;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let a=0;a<n.length;a++)if(!e(n[a]))return!1;return!0}function Sr(t){return t===null||typeof t!="object"?!1:Er(t.__frame_patch,br)}function Ar(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function kr(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function Rr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function Tr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const r=e.theme;return typeof r=="string"&&lr.includes(r)}var Lr=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],Or=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function Mr(t){return typeof t=="string"&&Or.includes(t)?t:"other"}var Pr=Object.freeze({until:null,now:!1}),Nr="__claude_hot",Cr="__claude_hot_in",jr=/^__claude_hot(?:_in)?(?::|$)/,kt=/^[0-9a-z]{1,32}$/,Xe=t=>t===void 0?Nr:"__claude_hot:"+t,be=t=>t===void 0?Cr:"__claude_hot_in:"+t;function Fr(t,e){const r=[];for(let n=0;n<t.length;n++){const a=t.key(n);a!==null&&a!==e&&jr.test(a)&&r.push(a)}for(const n of r)t.removeItem(n)}function Ir(t){let e=null;try{e=q(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!kt.test(e.k)?null:le(e.g)?{k:e.k,g:e.g}:{k:e.k}}var zn=262144,Dr=3e3,xr=5e3,Rt=/^[a-z0-9._:-]{1,64}$/,Hr=["none","hot-restart","hard-reload"],qr=["asset","doc","added","removed"],Br=1500,Ur=/^[0-9a-f]{64}$/;function q(t){return t!==null&&typeof t=="object"?t:null}function le(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function Tt(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function Kr(t){return t===void 0||typeof t=="string"&&Rt.test(t)}function Lt(t){const e=q(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function Ye(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Tt(e.seq)&&typeof e.handoff=="string"&&Lr.includes(e.handoff)&&Kr(e.note)}function Gr(t){const e=q(t);return e!==null&&le(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||Ye(e.from))}function zr(t){const e=q(t);return e!==null&&e.kv===1&&le(e.gen)&&Ye(e.from)&&Object.hasOwn(e,"data")}function $r(t){const e=q(t);return e!==null&&e.__frame_hot_snapshot===!0&&le(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||Lt(e.deadline))&&Tt(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function Wr(t){const e=q(t);return e!==null&&e.__frame_hot_start===!0&&le(e.gen)&&Ye(e.from)}function Vr(t){return typeof t=="string"&&t.length>=1&&t.length<=128}function Ot(t){return q(t)!==null&&!Array.isArray(t)}function Xr(t){const e=q(t);return e!==null&&e.__frame_cap_grant===!0&&typeof e.cap=="string"&&Vr(e.ver)&&(e.grant===void 0||Ot(e.grant))&&(e.budgets===void 0||Ot(e.budgets)&&Object.values(e.budgets).every(Number.isFinite))&&(e.brokerGen===void 0||le(e.brokerGen))}function Yr(t){const e=q(t);return e!==null&&e.__frame_cap_rewired===!0&&(e.caps===void 0||Array.isArray(e.caps)&&e.caps.every(r=>typeof r=="string"))&&(e.brokerGen===void 0||le(e.brokerGen))}function Mt(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function Pt(t){if(t==null||typeof t=="string")return!0;const e=q(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function Jr(t){const e=q(t);return e!==null&&typeof e.path=="string"&&qr.includes(e.kind)&&Pt(e.from)&&Pt(e.to)}function Zr(t){return t===null?null:Object.freeze(t.filter(Jr))}function Qr(t){const e=q(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&Mt(e.from)&&Mt(e.to)&&(e.changed===null||Array.isArray(e.changed))&&Hr.includes(e.required)&&Lt(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&Ur.test(e.preflight))}var ce=/^[\w.-]+\.js$/;function en(t,e,r){return r?"inert":typeof e=="string"&&ce.test(e)?t?[e]:"inert":t?"inert":"framed"}var Nt=Object.freeze({[Symbol("claude.hot.restart")]:!0});function Ct(t,e){let r;try{r=t??sessionStorage}catch{return null}const n=Xe(e?.k),a=be(e?.k);let s=null;try{s=r.getItem(n)}catch{}try{r.removeItem(n)}catch{}try{Fr(r,a)}catch{}let c=null;if(s!==null&&!(e!==null&&e.g===void 0))try{const d=JSON.parse(s);zr(d)&&(e===null||d.gen===e.g)&&(c=d)}catch{}if(c===null)try{r.removeItem(a)}catch{}return c}function jt(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var tn=/^[^/\\?#]{1,128}$/,Ft=t=>tn.test(t)&&t!=="."&&t!=="..";function It(t,e,r){const n=new URL(t),a="/_f/"+e+"/";if(!e||!n.pathname.startsWith(a)||!Ft(r))return null;const s=n.search.slice(1).split("&").filter(c=>!/^__frame_t(?:=|$)/.test(c)).join("&");return n.origin+"/_f/"+r+"/"+n.pathname.slice(a.length)+(s?"?"+s:"")+n.hash}var Fe="{}";function Ee(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function Dt(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function xt(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function rn(t,e,r,n=null){const a=setTimeout,s=clearTimeout,c=queueMicrotask,d=performance.now.bind(performance),O=new TextEncoder;let w=null,b=null;try{w=history,b=w.replaceState.bind(w)}catch{}const m=(...o)=>{try{console.warn(...o)}catch{}};let R=jt(),M=null;try{M=sessionStorage}catch{}const h={storage:M,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:R,key:n?.k};let p=n?.k;const D=typeof requestAnimationFrame=="function"?requestAnimationFrame:o=>a(()=>o(d()),16);let _=e?.data??{},C=Ee(e?.from),P=e?.gen??0,x=e!==null,W=!1,J=!1,X=null,Te=!1;const Le=new AbortController;let Oe=null,H=null,me=null,qe=!1,oe=()=>{};const l=new Promise(o=>{oe=o});let v=!1,E=!1,I=!1,j,L=null,K=!1,Me=!1,Z=!1,Be=!1,ae=!1,de=!1;const Pe=o=>{for(const u of[Xe(o),be(o)])try{M?.removeItem(u)}catch{}},V=(o,u)=>{try{u!==null&&r.post(o,u)}catch{}},se=()=>ae||=Z&&(H===null||Be),B=()=>{const o={__frame_hot:!0,ready:H!==null,accept:me!==null,demand:!0};de=!ae,de&&(o.booting=!0),v&&(o.readData=!0),I&&(o.threw=!0),L?.assess&&(o.preflight=!0),V(o,X)};let ve=!1,Ne=!1,ie=!1,Ce=!1;const i=()=>{ve||!Te||ie||(ve=!0,V({__frame_reveal_hold:!0},"*"))},g=()=>new Promise(o=>{let u,f=0;const S=F=>{if(u===void 0)u=F;else if(F!==u||++f>=8){o();return}try{D(S)}catch{o()}};try{D(S)}catch{o()}}),y=()=>{ie=!0,V({__frame_reveal_ready:!0},"*")},k=o=>{Ne||(Ne=!0,o.then(u=>{if(u===!1)return;let f=null;try{f=L?.settle?.()??null}catch{}return(f===null?g():new Promise(S=>{a(S,50),Promise.resolve(f).then(S,S)}).then(g)).then(y)}))},Q=()=>{if(Ce||!ie)return;Ce=!0;const o=()=>{try{L?.afterReveal?.()}catch{}};o(),g().then(()=>{o(),y()})},G=(o=!1)=>{if(qe||H===null||!x||!J)return;qe=!0;const u=H,f=_;c(()=>{let S;try{S=u(f)}catch(U){throw oe(!1),U}let F=!1;try{F=typeof S?.then=="function"}catch{}if(!F){oe(!0);return}Promise.resolve(S).then(()=>oe(!0),U=>{oe(!1),c(()=>{throw U})})}),k(o?l:r.dcl.then(()=>l))},ee=o=>typeof o=="string"&&Rt.test(o)?o:void 0,dt=o=>{const u={__frame_hot_restart:!0},f=ee(o?.note);f!==void 0&&(u.note=f),o?.required==="hard-reload"&&(u.required="hard-reload"),V(u,X)},Zt=Object.freeze({get data(){return J||(E=!0),!x&&!v&&(v=!0,J&&B()),_},get from(){return C},get gen(){return P},signal:Le.signal,snapshot(o){typeof o=="function"&&(Oe=o)},ready(o){typeof o!="function"||H!==null||(H=o,i(),B(),W&&V({__frame_hot_ready:!0,gen:P},X),G())},accept(o){typeof o=="function"&&(me=o,B())},restart(o){const u={note:o?.note,required:o?.required};if(J){dt(u);return}const f=j;j={note:ee(f?.note)??u.note,required:f?.required==="hard-reload"||u.required==="hard-reload"?"hard-reload":void 0}}});let Ue=null,Qt=()=>{};const Fn=new Promise(o=>{Qt=o});let In=null;const er=()=>In??=r.dcl.then(()=>{let o=!1;try{o=Ue!==null&&Ue.expect()}catch{}if(!o)return;const u=Ue.maxMs;return new Promise(f=>{Fn.then(f),a(f,u)})}),tr=()=>{if(!K||Me||L===null)return;Me=!0;const o=L;er().then(()=>{try{ie||o.afterStart(xt(e),!1)}catch{}})},rr=o=>{e!==null&&E&&(v=!0),_={},C=null,P=0;try{M?.removeItem(be(n?.k))}catch{}e!==null&&!o&&k(r.dcl.then(()=>H!==null?l:void 0))},Dn=()=>{K=!0,k(er().then(()=>H!==null?l:void 0)),tr()};try{addEventListener("error",()=>{I||H!==null||(I=!0,B())})}catch{}const nr=()=>{a(()=>{!ae&&se()&&de&&B()},0)};try{Z=document.readyState==="complete",Z||addEventListener("load",()=>{Z=!0,nr()},{once:!0})}catch{Z=!0}se(),l.then(()=>{Be=!0,nr()});let he=-1,ht,pt,je=!0,mt=!1,vt,Ke=null;const _t=o=>{const u=Ke===null;Ke=je&&o[0]!=="withheld"?o:["withheld",o[1],Fe];let f=o[0];if(je&&f!=="withheld"){const F={ver:R,handoff:f};ht!==void 0&&(F.seq=ht),pt!==void 0&&(F.note=pt);try{if(M===null)throw new Error("no storage");M.setItem(Xe(p),'{"kv":1,"gen":'+he+',"from":'+JSON.stringify(F)+(vt!==void 0?',"k":'+JSON.stringify(vt):"")+',"data":'+(f==="ok"?o[2]:Fe)+"}")}catch{f="unavailable"}}else{f="withheld",Pe(p);try{L?.release?.()}catch{}}const S={__frame_hot_snapshotted:!0,gen:he,handoff:f,bytes:o[1]};o[3]!==void 0&&(S.errName=o[3]),V(S,X),u&&(f==="snapshot_error"||f==="unclonable"||f==="oversize")&&m("claude.hot: snapshot",f,o[3])},_e=o=>{try{return Mr(o?.name)}catch{return"other"}},ye=(o,u,f=0)=>_t(u===void 0?[o,f,Fe]:[o,f,Fe,_e(u)]),xn=o=>{if(o.gen<=he)return;const u=he>=0;if(he=o.gen,ht=o.seq,pt=ee(o.note),typeof o.key=="string"&&kt.test(o.key)&&o.key!==p&&(Pe(p),p=o.key),je&&=o.handoff!==!1,u){Ke!==null?_t(Ke):mt&&V({__frame_hot_held:!0,gen:he},X);return}Le.abort();const f=Object.freeze({handoff:je,timeoutMs:o.timeoutMs,deadline:o.deadline??Pr}),S=Oe,F=()=>{if(je)try{vt=L?.capture()}catch{}if(S===null){ye("empty");return}let T=!1;const z=a(()=>{T||(T=!0,ye("snapshot_timeout"))},Math.max(0,f.timeoutMs));Promise.resolve().then(()=>S(f)).then(ge=>{if(T)return;T=!0,s(z);let re;try{re=JSON.stringify(ge)}catch(yt){ye("unclonable",yt);return}if(typeof re!="string"){ye("unclonable");return}let ne=re.length;try{ne=O.encode(re).length}catch{}if(ne>262144){ye("oversize",void 0,ne);return}_t(["ok",ne,re])},ge=>{T||(T=!0,s(z),ye("snapshot_error",ge))})};let U=null;try{U=L?.holdForIme()??null}catch{}if(U===null)F();else{mt=!0,V({__frame_hot_held:!0,gen:he},X);const T=()=>{mt=!1,F()};U.then(T,T)}},Hn=o=>{if(!W||x||H===null||o.gen!==P)return;let u=null;try{u=Ct(M,n&&{k:n.k,g:o.gen})}catch{}if(u!==null&&u.gen!==o.gen){u=null;try{M?.removeItem(be(n?.k))}catch{}}_=u?.data??{},C=Dt(Ee(u?.from??o.from),Ee(o.from)),u!==null&&(P=u.gen),x=!0,W=!1;const f=xt(u);l.then(S=>{try{S&&L?.afterStart(f,!0)}catch{}}),G(!0)};let Ge=0;const qn=o=>{const u=me;if(u===null||o.id<=Ge)return;Ge=o.id;const f=L?.assess;if(o.preflight===void 0||f===void 0){or(o,u);return}let S=!1;const F=z=>{S||(S=!0,s(T),o.id===Ge&&or(o,u,z))},U=()=>F(f.timeout(o)),T=a(U,Br+100);f.run(o,window).then(F,U)},or=(o,u,f)=>{let S,F=!1,U=!1,T,z,ge=null;const re=A=>{if(U)return!1;if(T!==void 0&&T!==A)return m(`claude.hot: u.${A}() ignored - u.${T}() was called first`),!1;const te=T===void 0;return T=A,te},ne=A=>{T="restart",m(`claude.hot: ${A} - restarting`)},yt=()=>{if(!re("adopt")||o.id!==Ge)return;const A=o.to.ver;if(ze.required!=="none"){ne(`u.adopt() needs required 'none', it is '${ze.required}'`);return}if(!Ft(A)){ne("u.adopt() cannot address this version");return}if(!R||A===R)return;const te=R,Y=h.entry;let $e="",wt,we=null,We;try{$e=location.href,wt=w.state,we=It($e,te,A),we!==null&&(b(wt,"",we),location.pathname.startsWith("/_f/"+A+"/")?we=location.href:We="navigate event canceled")}catch(Et){We=_e(Et)}if(We!==void 0){z="adopt_failed",ne(`adopt_failed ${We}; URL not changed`);return}we===null?(z="adopt_skipped",m(`claude.hot: adopt_skipped - page already left /_f/${te}/; URL not changed, update still applied`)):z="adopted",R=h.ver=A;try{h.entry=It(Y,te,A)??Y}catch{}const bt=we;ge=()=>{if(R===A){if(bt!==null)try{if(location.href!==bt)m("claude.hot: adopt_revert_skipped - update not applied; URL left where the page navigated");else{if(b(wt,"",$e),location.href!==$e){m("claude.hot: adopt_revert_failed navigate event canceled - URL still at the new version");return}z="adopt_reverted",m("claude.hot: adopt_reverted - adopt() was called but the handler threw; URL restored")}}catch(Et){m(`claude.hot: adopt_revert_failed ${_e(Et)} - URL still at the new version`);return}R=h.ver=te,h.entry=Y,bt===null&&(z=void 0)}}},ze=Object.freeze({from:{ver:o.from.ver,seq:o.from.seq},to:{ver:o.to.ver,seq:o.to.seq},changed:Zr(o.changed),required:o.required,deadline:o.deadline,adopt:yt,defer(){return re("defer")&&ze.deadline.now&&ne("u.defer() past the deadline"),Nt},restart(A){return re("restart"),T==="restart"&&!U&&(S??=ee(A?.note),F||=A?.required==="hard-reload"),Nt},...f?.update}),Bn=(A,te)=>{U=!0,A==="threw"?(ge?.(),S??=_e(te).toLowerCase()):T===void 0&&m(A==="timeout"?"claude.hot: accept handler did not answer in time - restarting":"claude.hot: accept handler settled without defer/restart/adopt - restarting");const Y={__frame_hot_verdict:!0,id:o.id};Y.verdict=A==="threw"||T===void 0||T==="restart"?"restart":T==="adopt"?"applied":"deferred",Y.verdict==="restart"&&(F&&(Y.required="hard-reload"),S!==void 0&&(Y.note=S)),z!==void 0&&(Y.verdict==="applied"||z!=="adopted")&&(Y.adopt=z),V(Object.assign(Y,f?.verdict),X)};let ar=!1;const gt=(A,te)=>ar?!1:(ar=!0,s(Un),Bn(A,te),!0),Un=a(()=>gt("timeout"),o.verdictTimeoutMs);Promise.resolve().then(()=>u(ze)).then(()=>gt("settled"),A=>{!gt("threw",A)&&T==="adopt"&&dt({note:_e(A).toLowerCase()}),m("claude.hot: accept",_e(A))})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:Zt,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:Zt,boot:h,afterConnect(){Te=!0,(e!==null||H!==null)&&i()},onInit(o,u){X=u,J=!0;const f=Gr(o)?o:null;f?.phase==="final"&&e!==null&&e.gen===f.gen?(x=!0,C=Dt(C,Ee(f.from)),Dn()):(W=f?.phase==="pending",rr(W),x=!W,P=f?.gen??0,C=Ee(f?.from)),B(),de&&a(()=>{ae||(ae=!0,B())},xr),W&&H!==null&&V({__frame_hot_ready:!0,gen:P},u),j!==void 0&&(dt(j),j=void 0),G()},onNoInit(){J=!0,rr(!1),x=!0,G()},onShell(o){return o?.__frame_revealed===!0?(Q(),!1):$r(o)?(xn(o),!0):Wr(o)?(Hn(o),!0):Qr(o)?(qn(o),!0):!1},attachExtras(o){L=o,tr(),o.assess&&B()},inSlot:()=>be(p),hydration(o,u){Ue??={expect:o,maxMs:u}},hydrated(){Qt()},carried(){return x?_:{}},presented:()=>ie}}var $n="frame_ldx_runtime",nn="frame_ldx_build",Wn="script#an-form",on=256;function Ht(t,e,r){for(const n of t)r(n)&&t.delete(n);t.size>=on&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function Je(t,e,r){try{const n=t[e];if(typeof n!="function")return;t[e]=function(...a){const s=n.apply(this,a);try{r(this)}catch{}return s}}catch{}}var Ze;function an(){if(Ze)return Ze;const t={media:new Set,contexts:new Set,onStart:null,onPause:null};Ze=t;const e=window.HTMLMediaElement?.prototype;e&&(Je(e,"play",a=>{Ht(t.media,a,s=>s.paused),t.onStart?.(a)}),Je(e,"pause",a=>t.onPause?.(a)));const r=window.AudioContext,n=window.AudioNode?.prototype;return r&&n&&Je(n,"connect",a=>{const s=a.context;s instanceof r&&(Ht(t.contexts,s,c=>c.state==="closed"),t.onStart?.(s))}),t}function sn(t){let e=window;for(let r=0;e.parent&&e.parent!==e&&r<8;r++)if(e=e.parent,t(e))return!0;return!1}function ln(){let t=null;const e=()=>t??parent,r=n=>t?n===t:sn(a=>a===n);return{post(n,a){if(t){e().postMessage(n,a);return}let s=parent;for(let c=0;c<8&&(s.postMessage(n,a),!(!s.parent||s.parent===s));c++)s=s.parent},on(n){const a=s=>{const c=s.source;r(c)&&n(s.data,s.origin,s.isTrusted,()=>{t??=c})};return addEventListener("message",a),()=>removeEventListener("message",a)},port:n=>({post(a,s){if(s?.activation){e().postMessage(a,{targetOrigin:n,includeUserActivation:!0});return}if(s?.transfer){e().postMessage(a,n,s.transfer);return}e().postMessage(a,n)},on(a,s){const c=d=>{r(d.source)&&d.origin===n&&a(d.data,d)};return addEventListener("message",c,s),()=>removeEventListener("message",c,s)}})}}function cn(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var un=500,fn=2e4,dn="data-token-reads",hn="data-frame-refused-watch",pn="data-frame-unsupported",mn=/(?:^|\s)stylesheet(?:\s|$)/i;function vn(t,e){let r="";if(t instanceof HTMLScriptElement?r=t.src:t instanceof HTMLLinkElement&&mn.test(t.rel)&&(r=t.href),!r)return null;try{const n=new URL(r);return n.origin===location.origin&&n.pathname.startsWith(e)?n.origin+n.pathname:null}catch{return null}}function _n(t,e,r){if(!t||e!=="query")return;const n="/_f/"+t+"/";document.documentElement.setAttribute(hn,"");const a=location.href,s=fetch,c=setTimeout,d={method:"HEAD",cache:"no-store",credentials:"same-origin"},O=h=>h.ok||h.status===304;let w=!1,b=!1;const m=()=>removeEventListener("error",M,!0),R=async h=>{const p=await s(h,d);if(O(p))b=!0;else if(p.status===403){const D=await s(a,d);if(O(D)){const _=(await s(h,d)).status;_===403?(b=!0,document.documentElement.setAttribute(pn,""),r()):_<500&&(b=!0)}else D.status>=400&&D.status<500&&(b=!0)}},M=h=>{if(b||w)return;if(document.documentElement.hasAttribute(dn)){b=!0,m();return}const p=vn(h.target,n);p&&(w=!0,c(()=>{R(p).catch(()=>{}).finally(()=>{w=!1,b&&m()})},un))};addEventListener("error",M,!0),addEventListener("load",m,{once:!0}),c(m,fn)}var Qe="__frame_scroll",yn=150,gn=310,wn=160,bn=3e4;function En(){let t=0,e=!1,r=!1,n=!1,a=0,s=null;const c=_=>{try{sessionStorage.setItem(Qe,JSON.stringify({y:_}))}catch{}},d=()=>{if(clearTimeout(t),s===null)return;const _=s;s=null,c(_)},O=()=>{if(e){e=!1;return}r=!0,s=scrollY,clearTimeout(t),t=setTimeout(d,yn)};try{addEventListener("scroll",O,{passive:!0}),addEventListener("pagehide",d)}catch{}const w=()=>{let _;try{_=sessionStorage.getItem(Qe)}catch{return null}if(_===null)return null;let C;try{C=JSON.parse(_)}catch{C=null}const P=C?.y;if(!(typeof P=="number"&&Number.isFinite(P)&&P>=0)){try{sessionStorage.removeItem(Qe)}catch{}return null}return P};let b=!1;const m=_=>{try{const C=scrollY;scrollTo({top:_,left:0,behavior:"instant"}),a=_,n=!0,clearTimeout(t),s=null,c(_);const P=scrollY;P!==C&&(e=!0),P!==_&&!b&&(b=!0,addEventListener("load",()=>{try{if(scrollY===P){const x=w();m(x!==null?x:a)}}catch{}},{once:!0}))}catch{}},R=()=>{try{return!!location.hash}catch{return!0}};let M=!1;const h=()=>{try{if(M||innerWidth>gn||innerHeight>wn)return;M=!0;const _=Date.now(),C=()=>{try{removeEventListener("resize",C)}catch{}if(Date.now()-_>bn||r||R())return;const P=w();m(P!==null?P:a)};addEventListener("resize",C)}catch{}};let p=!1,D=!1;return{restore(){if(p||(p=!0,R()))return;const _=w();_!==null&&(m(_),h())},promoted(){if(D||(D=!0,R()))return;const _=w();_!==null?(m(_),h()):n&&m(a)}}}function Sn(t,e,r,n){let a=null;try{a=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:O=>O})??null}catch{}const s=window.Worker,c=s?.prototype,d=Object.freeze({Worker:s,workerOn:c?.addEventListener,workerPost:c?.postMessage,workerTerminate:c?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:a,origins:e});r(t).then(O=>O?.bootTopLevel?O.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Vn="modulepreload",Xn=function(t){return"/"+t},Yn={},An=function(e,r,n){let a=Promise.resolve();function s(c){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=c,window.dispatchEvent(d),!d.defaultPrevented)throw c}return a.then(c=>{for(const d of c||[])d.status==="rejected"&&s(d.reason);return e().catch(s)})},kn=window===top,qt=Object.getOwnPropertyDescriptor(window,"claude"),Ie=en(kn,window.__FRAME_PREAMBLE?.topLevel,qt?.writable===!1),et=typeof Ie=="object"&&Ie[0],N=et?cn():ln();(function(){const t=Object.defineProperty,e=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let a=0;a<r.length;a++){const s=r[a];try{t(e,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[s]}catch{}try{t(e,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[s]=="function"&&n++}if(n&&Ie==="framed")try{N.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Bt=1e4,Rn=2e3,tt=2e3,rt=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function Ut(t){for(const e of rt)if(e.endsWith(":*"))try{const r=new URL(t);if(`${r.protocol}//${r.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var Se=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),Ae=window.__FRAME_PREAMBLE?.transforms,nt=window.__FRAME_PREAMBLE?.comments,ot=window.__FRAME_PREAMBLE?.translate,ke=window.__FRAME_PREAMBLE?.ldx,at=sr(window.__FRAME_PREAMBLE?.cred);function Kt(t){return An(()=>import("/_runtime/"+t),void 0)}var Re=new Set,Gt=setTimeout,Tn=fetch,Ln=AbortController,On=800+800*Math.random(),Mn=3e3,De=null,zt=new Map;function Pn(t,e){let r=zt.get(t);return r||zt.set(t,r=Nn(t,e)),r}function Nn(t,e){if(De?.has(t))return Promise.resolve("csp");if(navigator.onLine===!1)return Promise.resolve("offline");const r=new Ln;let n=!1;return Gt(()=>{n=!0,r.abort()},Mn),Tn("/_runtime/"+t,{signal:r.signal}).then(a=>(r.abort(),a.ok?/javascript/i.test(a.headers.get("content-type")??"")?e instanceof Error&&/:\d+:\d+\)?$/m.test(e.stack??"")?"eval":"served":"mime":"http"),()=>n?"timeout":De?.has(t)?"csp":"net")}function ue(t){if(!De){const e=De=new Set;try{document.addEventListener("securitypolicyviolation",r=>{const n=/\/_runtime\/([^/?#]+)/.exec(r.blockedURI);n&&r.disposition!=="report"&&e.add(n[1])})}catch{}}return Kt(t).catch(()=>new Promise(e=>Gt(e,On)).then(()=>Kt(t+"?r=1")).then(e=>(e!==void 0&&Re.add(t),e)))}function $t(t,e,r){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},brokerGen:t.brokerGen,transforms:new Map,shellOrigin:e,shell:r,mount:ft,hooks:xe,pipe:()=>({wrap:(n,a)=>(...s)=>{try{return a(...s)}catch(c){return Promise.reject(c)}}})}}var pe=null,$=null;function Wt(t,e,r){try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var st=!1,xe={editBefore:null,edit:null};function Cn(t,e,r=!1){const n=[];let a;if(r)try{xe.editBefore?.(t)}catch{}for(const s of t.elements){const c=document.querySelector(`[data-id="${s.target}"]`);if(!c){a=s.target;break}if([...Object.keys(s.attrsSet??{}),...s.attrsRemoved??[]].some(d=>!fr(d)||dr(c,d))){a=s.target;break}if(s.text!==void 0&&(!vr(c)||wr(c))){a=s.target;break}for(const[d,O]of Object.entries(s.attrsSet??{}))if(!Xt(c,d)){try{c.setAttribute(d,O)}catch{}Vt(c,d,O)}for(const d of s.attrsRemoved??[])Xt(c,d)||(c.removeAttribute(d),Vt(c,d,null));typeof s.text=="string"&&yr(c,s.text),n.push(s.target)}if(r)try{xe.edit?.(t.seq,n,a)}catch{}if(a!==void 0){N.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:n}}))}catch{}}function Vt(t,e,r){if(!(t instanceof HTMLInputElement))return;const n=e.toLowerCase();n==="checked"?t.checked=r!==null:n==="value"&&t.type!=="file"&&(t.value=r??"")}function Xt(t,e){const r=e.toLowerCase(),n=t;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function Yt(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,st=!0):st&&(delete e.dataset.theme,e.style.colorScheme="",st=!1)}var fe=new Map,it=null;function lt(){let t;const e={u:new Promise(r=>{t=r}),r:r=>{e.done=!0,t(r)},done:!1,nulled:!1};return e}function He(t,e){t.nulled=!0,t.ver=e,t.r(null)}function ct(t,e){for(const[r,n]of fe)n.done||(e&&n.asked?e(r,n):He(n,t))}var jn=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),ut=!1,ft=(t,e)=>{let r=fe.get(t);if(r?.nulled&&ut)r=lt(),fe.set(t,r);else if(!r||r.done){r?.nulled&&$&&N.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t,phase:"install"}},$);return}const n=typeof e=="function"?Object.setPrototypeOf(e,jn):Object.assign(Object.create(null),e);typeof n.then=="function"&&delete n.then,r.want=void 0,r.r(Object.freeze(n))};function Jt(){const t=qt?.value??{};Wt(window,"claude",t);for(const e of Object.keys(Se)){if(t[e]!==void 0){Wt(t,e,t[e]);continue}fe.set(e,lt())}if(t.use===void 0){const e=r=>{if(typeof r!="string"||!Object.hasOwn(Se,r))return Promise.resolve(null);let n=fe.get(r);return n?(it&&(n.nulled||n.want!==void 0)&&(n=it(r,n)),n.asked=!0,n.u):Promise.resolve(t[r]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(Ie==="framed"){let t;const e=Ae&&ce.test(Ae)?ue(Ae).catch(l=>{t={f:Ae,e:l}}):Promise.resolve(void 0),r=l=>{if(l.type==="auxclick"&&l.button!==1)return;const v=l.target,E=v&&v.closest?v.closest("a[href],area[href]"):null;if(!E)return;const I=E.getAttribute("href");if(!I)return;let j;try{j=new URL(I,document.baseURI)}catch{return}if((j.protocol==="http:"||j.protocol==="https:")&&j.origin!==location.origin){l.preventDefault();const L=(E.getAttribute("target")??"").toLowerCase(),K=l.type==="auxclick"||l.metaKey||l.ctrlKey||l.shiftKey||l.altKey||!["","_self","_top","_parent"].includes(L);N.post({__frame_nav:!0,url:j.href,newTab:K},"*")}};addEventListener("click",r,!0),addEventListener("auxclick",r,!0);const n={},a=l=>{l.isTrusted&&(n.pointer=!0)},s=l=>{l.isTrusted&&(n.click=!0)};addEventListener("pointermove",a,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0});const c={cb:null};addEventListener("keydown",l=>c.cb?.(l),!0);const d={cb:null};addEventListener("keydown",l=>d.cb?.(l));const O=an();e.then(l=>l?.installEscapeForward?.(c,v=>{$&&N.post(v,$)})),e.then(l=>{try{l?.installFocusKeep?.()}catch{}}),e.then(l=>{if(!l?.wireNav)return;const v=N.port("*");l.wireNav(v),removeEventListener("click",r,!0),removeEventListener("auxclick",r,!0),removeEventListener("pointermove",a,!0),removeEventListener("click",s,!0),l.wireEngagement?.(n,v,O)});let w=null;try{w=En()}catch{}const b=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();let m=null,R=null;try{R=Ir(window.name),m=Ct(null,R)}catch{}const M=Jt();let h=null;try{h=rn(M,m,{post:(l,v)=>N.post(l,v),dcl:b},R)}catch{}e.then(l=>{try{h&&l?.installHotExtras?.(h)}catch{}});let p=null;const D=()=>Array.isArray(p?.flags)&&p.flags.includes("frame_ldx_runtime")&&!!ke&&ce.test(ke)&&document.querySelector("script#an-form")!==null;try{h?.hydration(D,Dr)}catch{}let _=null,C=0;const P=N.on((l,v,E,I)=>{Ut(v)&&Ar(l)&&(I(),p=l.__frame_init,$=v,P(),clearTimeout(C),_?.())});if(at)for(const l of rt)try{l.endsWith(":*")||N.post({__frame_cred:at},l)}catch{}N.post({__frame_connect:!0},"*");try{h?.afterConnect()}catch{}const x=setTimeout,W=clearTimeout;let J=()=>NaN,X=()=>[];try{J=performance.now.bind(performance),X=performance.getEntriesByType.bind(performance)}catch{}let Te=0;const Le=()=>{try{N.post({__frame_alive:!0},"*")}catch{}Te=x(Le,Rn)},Oe=()=>W(Te);Le(),addEventListener("load",Oe,{once:!0});const H=new Promise(l=>{_=l,C=setTimeout(()=>{P(),l()},Bt)}),me=new WeakSet;addEventListener("error",l=>{l.target&&me.add(l.target)},!0);try{_n(jt(),at,()=>{e.then(l=>{try{l?.drawRefusedNotice?.()}catch{}})})}catch{}const qe=()=>{let l=[];try{l=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(E=>!E.sheet&&!E.disabled&&!me.has(E)&&E.getAttribute("href")&&URL.canParse(E.href)&&(!E.media||matchMedia(E.media).matches))}catch{}let v=l.length;return v===0?Promise.resolve():new Promise(E=>{try{const I=tt-J(),j=x(E,I>0?I<tt?I:tt:0),L=()=>{--v===0&&(W(j),E())};for(const K of l)K.addEventListener("load",L,{once:!0}),K.addEventListener("error",L,{once:!0})}catch{E()}})};b.then(()=>{try{w?.restore()}catch{}}),Promise.all([H,b,e]).then(([,,l])=>{if(p?.hostOverlays!==!0||!$)return;let v=!1;try{v=l?.declaresCover?.()===!0}catch{}N.post({__frame_layout:{cover:v}},$)});const oe={cb:null};N.on((l,v)=>{if(Ut(v)&&kr(l)){try{w?.promoted()}catch{}oe.cb?.()}}),H.then(async()=>{if(!p||!$){ct();try{h?.onNoInit()}catch{}return}if(Yt(p.theme),p.hostVisible===!1&&e.then(i=>i?.applyHostVisible?.(!1,O)),p.hostKeys!==void 0){const i=$,g=p.hostKeys;e.then(y=>y?.installHostKeyForward?.(d,g,k=>N.post(k,i)))}try{h?.onInit(p.hot,$)}catch{}const l=$,v=N.port(l),E=(i,g)=>N.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:i,phase:g}},l),I=(i,g,y)=>{new Promise(k=>k(Pn(g,y))).then(k=>E(i,k),()=>E(i))},j=i=>N.post({__frame_cap_recovered:{cap:i}},l);let L=p.brokerGen;const K=()=>h?.boot.ver??"",Me=K(),Z=(i,g)=>{const y=K();W(g.t),g.want=y,g.t=x(()=>{g.done||He(g,y)},Bt),N.post({__frame_cap_want:!0,cap:i,ver:y},l)},Be=(i,g)=>{const y=fe.get(i.cap),k=Se[i.cap];if(!g||!y||y.done||y.want!==i.ver||!ce.test(k))return;if(W(y.t),y.want=void 0,L=i.brokerGen??L,i.ver!==K()){Z(i.cap,y);return}if(!i.grant||i.cap==="network"){He(y,i.ver);return}const Q=pe,G=pe={...Q,capabilities:{...Q.capabilities,[i.cap]:i.grant},capBudgets:{...Q.capBudgets,[i.cap]:{...Q.capBudgets[i.cap],...i.budgets}}};ue(k).then(ee=>{Re.has(k)&&j(i.cap),G.brokerGen=L,ut=!0;try{ee?.install?.(G)}catch{E(i.cap,"install")}finally{ut=!1}},ee=>I(i.cap,k,ee)).then(()=>{y.done||He(y,i.ver)})};let ae=!1,de=!1;N.on((i,g,y)=>{if(g!==l)return;try{if(h?.onShell(i))return}catch{}if(Tr(i)&&Yt(i.__frame_theme.theme),Xr(i)&&Be(i,y),y&&Yr(i)&&(L=i.brokerGen??L),Rr(i)){const G=i.__frame_host_visible.visible;e.then(ee=>ee?.applyHostVisible?.(G,O))}Sr(i)&&Cn(i.__frame_patch,l,y);const k=i?.__fc_mode;k&&typeof k=="object"&&!ae&&nt&&ce.test(nt)&&(ae=!0,ue(nt).then(G=>G.install?.(l,k.on===!0,v)).catch(()=>{}));const Q=i?.__ft_cmd;Q&&typeof Q=="object"&&!de&&ot&&ce.test(ot)&&(de=!0,ue(ot).then(G=>G.install?.(l,Q,v)).catch(()=>{}))});const Pe=Object.keys(p.capabilities??{}).filter(i=>Object.hasOwn(Se,i)).map(i=>[i,Se[i]]).filter(i=>typeof i[1]=="string"&&ce.test(i[1])),V=await Promise.allSettled(Pe.map(([,i])=>ue(i))),se=await e,B=l;if(se?.buildBoot||(t?I("_transforms",t.f,t.e):E("_transforms")),se?.buildBoot)try{pe=se.buildBoot(p,se.TRANSFORMS??{},{shellOrigin:B,mount:ft,hooks:xe,shell:v},i=>N.post({__frame_cap_telemetry:i},B))}catch{E("_transforms","install"),pe=$t(p,B,v)}else pe=$t(p,B,v);se?.buildBoot&&Re.has(Ae??"")&&j("_transforms");const ve=pe;ve.brokerGen=L,V.forEach((i,g)=>{const[y,k]=Pe[g];if(i.status!=="fulfilled"){I(y,k,i.reason);return}Re.has(k)&&j(y);try{i.value?.install?.(ve)}catch{E(y,"install")}});const Ne=p.capWants===!0;Ne&&(it=(i,g)=>{const y=K();if(!y)return g;if(!g.nulled)return g.want!==y&&Z(i,g),g;if(y===g.ver)return g;const k=lt();return fe.set(i,k),Z(i,k),k}),ct(Me,Ne&&K()!==Me?Z:void 0),await b,await qe(),Oe();const ie=ir(X,J);N.post(ie?{__frame_ready:!0,nav:ie}:{__frame_ready:!0},$),e.then(i=>{i?.installSizeReporter?.(B,oe,v),i?.installPaintReporter?.(v)});let Ce=!1;try{Ce=D()}catch{}ke&&Ce?ue(ke).then(i=>i?.boot?.({shellOrigin:l,build:ve.flags.has(nn),hot:h?.hot??null,carried:h?.carried(),presented:()=>h?.presented()??!0})).catch(()=>!1).then(i=>{h?.hydrated(),i!==!0?E("_ldx"):Re.has(ke)&&j("_ldx")}):h?.hydrated()})}else et&&(Jt(),Sn(et,rt,ue,{settle:ct,mount:ft}))})();</script><!-- /frame-runtime -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Python Essentials 1 — Full Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --paper-2: #F4F4F4;
+    --ink: #14161A;
+    --ink-muted: #40454D;
+    --border: #D6D6D3;
+    --accent: #7A5A0E;
+    --accent-ink: #FFFFFF;
+    --code-bg: #151B24;
+    --code-ink: #E8E6DE;
+    --code-muted: #8891A0;
+    --code-keyword: #E0B44D;
+    --code-string: #8FB996;
+    --code-comment: #9199A8;
+    --code-number: #7AA7D9;
+    --code-builtin: #6FBFB0;
+    --code-title: #D9B65C;
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181F;
+      --paper-2: #1B212B;
+      --ink: #F2F0E9;
+      --ink-muted: #AEB5C0;
+      --border: #333B48;
+      --accent: #D9B65C;
+      --accent-ink: #14181F;
+      --code-bg: #10141B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181F;
+    --paper-2: #1B212B;
+    --ink: #F2F0E9;
+    --ink-muted: #AEB5C0;
+    --border: #333B48;
+    --accent: #D9B65C;
+    --accent-ink: #14181F;
+    --code-bg: #10141B;
+  }
+
+  * { box-sizing: border-box; 
+    scrollbar-width: none;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html, body { height: 100%; }
+  body {
+
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  h1, h2, h3, h4 { font-family: 'Spectral', Georgia, serif; font-weight: 600; margin: 0; color: var(--ink); }
+  a { color: var(--accent); }
+  p { line-height: 1.65; color: var(--ink); max-width: 68ch; }
+  .muted { color: var(--ink-muted); }
+
+  .app {
+    display: grid;
+    grid-template-columns: 272px 1fr;
+    min-height: 100%;
+  }
+
+  /* ---- Sidebar ---- */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    background: var(--paper-2);
+    padding: 28px 20px;
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    overflow-y: auto;
+  }
+  .brand {
+    margin-bottom: 28px;
+  }
+  .brand .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .brand h1 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+  .brand .sub {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    display: block;
+  }
+  nav.topics { display: flex; flex-direction: column; gap: 2px; }
+  .topic-btn {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-left: 2px solid transparent;
+    padding: 9px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--ink-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  .topic-btn .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-muted);
+    min-width: 16px;
+  }
+  .topic-btn:hover { background: var(--paper); color: var(--ink); }
+  .topic-btn.active {
+    background: var(--paper);
+    color: var(--ink);
+    border-left-color: var(--accent);
+    font-weight: 600;
+  }
+  .topic-btn.active .num { color: var(--accent); }
+
+  .theme-toggle {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .theme-toggle button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 6px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .theme-toggle button:hover { border-color: var(--accent); }
+
+  /* ---- Main ---- */
+  main {
+    padding: 48px 56px 80px;
+    max-width: 880px;
+  }
+  .topic-panel { display: none; }
+  .topic-panel.active { display: block; }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .topic-panel h2 {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+  .topic-panel > .intro {
+    font-size: 16px;
+    color: var(--ink-muted);
+    margin-bottom: 36px;
+    max-width: 62ch;
+  }
+  .topic-panel h3 {
+    font-size: 19px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+  }
+  .topic-panel h3 + p { margin-top: 0; }
+
+  pre {
+    background: var(--code-bg);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 14px 0 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  p code, li code, td code {
+    background: var(--paper-2);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+  pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--code-ink);
+    white-space: pre;
+  }
+  .hljs-keyword, .hljs-title.function_ + .hljs-params, .hljs-operator { color: var(--code-keyword); }
+  .hljs-string, .hljs-doctag { color: var(--code-string); }
+  .hljs-comment { color: var(--code-comment); font-style: italic; }
+  .hljs-number { color: var(--code-number); }
+  .hljs-built_in, .hljs-title.class_ { color: var(--code-builtin); }
+  .hljs-title.function_ { color: var(--code-title); }
+  .hljs-literal { color: var(--code-number); }
+  .hljs-params { color: var(--code-ink); }
+  .hljs-variable { color: var(--code-ink); }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0 22px;
+    font-size: 13.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--ink-muted);
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .note {
+    border-left: 2px solid var(--accent);
+    background: var(--paper-2);
+    padding: 12px 16px;
+    margin: 18px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14px;
+  }
+  .note strong { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: none; color: var(--accent); display: block; margin-bottom: 4px; }
+
+  ul, ol { padding-left: 20px; line-height: 1.65; }
+  li { margin-bottom: 4px; }
+
+  .topic-footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+  .topic-footer button {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .topic-footer button:hover { border-color: var(--accent); color: var(--accent); }
+  .topic-footer button:disabled { opacity: 0.35; cursor: default; }
+  .topic-footer button:disabled:hover { border-color: var(--border); color: var(--ink); }
+
+  .practice { margin-top: 44px; }
+  .practice-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 14px;
+    padding-top: 4px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .problem {
+    border: 1px solid var(--border);
+    background: var(--paper-2);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .problem-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .problem-prompt { margin: 0 0 12px; font-size: 14.5px; }
+  .problem-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .problem-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .solution { display: none; margin-top: 12px; }
+  .solution.open { display: block; }
+  .solution pre { margin: 8px 0 0; }
+
+  /* mobile */
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: auto;
+      padding: 14px 14px 10px;
+      z-index: 10;
+    }
+    .brand { margin-bottom: 12px; }
+    nav.topics {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 6px;
+      padding-bottom: 6px;
+    }
+    .topic-btn {
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .topic-btn.active { border-bottom-color: var(--accent); }
+    .theme-toggle { display: none; }
+    main { padding: 28px 20px 60px; }
+    .topic-panel h2 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="eyebrow">REFERENCE</span>
+      <h1>Python Essentials 1</h1>
+      <span class="sub">8 topics · PE1 depth</span>
+    </div>
+    <nav class="topics" id="nav"><button class="topic-btn active" id="nav-1"><span class="num">01</span><span>Variables &amp; Data Types</span></button><button class="topic-btn" id="nav-2"><span class="num">02</span><span>Conditionals</span></button><button class="topic-btn" id="nav-3"><span class="num">03</span><span>Loops</span></button><button class="topic-btn" id="nav-4"><span class="num">04</span><span>Functions</span></button><button class="topic-btn" id="nav-5"><span class="num">05</span><span>Collections</span></button><button class="topic-btn" id="nav-6"><span class="num">06</span><span>Strings</span></button><button class="topic-btn" id="nav-7"><span class="num">07</span><span>File I/O</span></button><button class="topic-btn" id="nav-8"><span class="num">08</span><span>Exceptions</span></button></nav>
+    <div class="theme-toggle">
+      <span class="muted" style="font-size:12px;">Theme</span>
+      <button id="themeBtn" type="button">System</button>
+    </div>
+    <div class="theme-toggle" style="border-top:none; padding-top:8px;">
+      <span class="muted" style="font-size:12px;">Save a copy</span>
+      <button id="downloadBtn" type="button">Download</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- Topics injected below as static sections -->
+
+    <section class="topic-panel active" data-idx="1" id="topic-1">
+      <span class="kicker">01 / 08</span>
+      <h2>Variables and Data Types</h2>
+      <p class="intro">A variable in Python is a name bound to an object. Unlike languages where a variable is a fixed memory box, Python names are references — the same object can have several names, and a name can be rebound to a different type at any time.</p>
+
+      <h3>Assignment and dynamic typing</h3>
+      <p>Python infers type from the assigned value at runtime. No type declaration is required or possible in the C/Java sense.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes">age = <span class="hljs-number">25</span>              <span class="hljs-comment"># int</span>
+price = <span class="hljs-number">19.99</span>          <span class="hljs-comment"># float</span>
+name = <span class="hljs-string">"Bimal"</span>         <span class="hljs-comment"># str</span>
+is_active = <span class="hljs-literal">True</span>       <span class="hljs-comment"># bool</span>
+nothing = <span class="hljs-literal">None</span>         <span class="hljs-comment"># NoneType</span>
+
+age = <span class="hljs-string">"twenty-five"</span>    <span class="hljs-comment"># legal — age now refers to a str</span></code></pre>
+
+      <h3>Core built-in types</h3>
+      <table>
+        <tbody><tr><th>Type</th><th>Example</th><th>Mutable</th><th>Notes</th></tr>
+        <tr><td><code>int</code></td><td><code>42</code>, <code>-7</code></td><td>No</td><td>Arbitrary precision — no overflow</td></tr>
+        <tr><td><code>float</code></td><td><code>3.14</code></td><td>No</td><td>IEEE-754 double; subject to rounding error</td></tr>
+        <tr><td><code>complex</code></td><td><code>2+3j</code></td><td>No</td><td>Rare at PE1 level; real/imaginary parts</td></tr>
+        <tr><td><code>str</code></td><td><code>"text"</code></td><td>No</td><td>Sequence of Unicode characters</td></tr>
+        <tr><td><code>bool</code></td><td><code>True</code>, <code>False</code></td><td>No</td><td>Subtype of <code>int</code>: <code>True == 1</code></td></tr>
+        <tr><td><code>NoneType</code></td><td><code>None</code></td><td>—</td><td>Represents "no value"</td></tr>
+      </tbody></table>
+
+      <div class="note"><strong>FLOAT PRECISION</strong>
+      <code>0.1 + 0.2</code> evaluates to <code>0.30000000000000004</code>, not <code>0.3</code> — a binary floating-point limitation, not a Python bug. Compare floats with tolerance, not <code>==</code>.</div>
+
+      <h3>Numeral systems</h3>
+      <p>Python accepts binary, octal, and hexadecimal integer literals, all stored internally as the same <code>int</code> type.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes">binary_lit = <span class="hljs-number">0b1010</span>     <span class="hljs-comment"># 10</span>
+octal_lit  = <span class="hljs-number">0o12</span>        <span class="hljs-comment"># 10</span>
+hex_lit    = <span class="hljs-number">0xA</span>          <span class="hljs-comment"># 10</span>
+
+<span class="hljs-built_in">bin</span>(<span class="hljs-number">10</span>)      <span class="hljs-comment"># '0b1010'</span>
+<span class="hljs-built_in">oct</span>(<span class="hljs-number">10</span>)       <span class="hljs-comment"># '0o12'</span>
+<span class="hljs-built_in">hex</span>(<span class="hljs-number">10</span>)        <span class="hljs-comment"># '0xa'</span>
+<span class="hljs-built_in">int</span>(<span class="hljs-string">"2A"</span>, <span class="hljs-number">16</span>)   <span class="hljs-comment"># 42 — parse a string in a given base</span></code></pre>
+
+      <h3>Type checking and conversion</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-built_in">type</span>(age)          <span class="hljs-comment"># &lt;class 'int'&gt;</span>
+<span class="hljs-built_in">isinstance</span>(age, <span class="hljs-built_in">int</span>)  <span class="hljs-comment"># True</span>
+
+<span class="hljs-built_in">str</span>(<span class="hljs-number">25</span>)          <span class="hljs-comment"># "25"</span>
+<span class="hljs-built_in">int</span>(<span class="hljs-string">"42"</span>)         <span class="hljs-comment"># 42</span>
+<span class="hljs-built_in">int</span>(<span class="hljs-string">"3.9"</span>)          <span class="hljs-comment"># ValueError — int() won't parse a float string</span>
+<span class="hljs-built_in">float</span>(<span class="hljs-built_in">int</span>(<span class="hljs-string">"3"</span>))       <span class="hljs-comment"># 3.0</span>
+<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>)                <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">bool</span>(<span class="hljs-string">""</span>)                 <span class="hljs-comment"># False</span>
+<span class="hljs-built_in">bool</span>(<span class="hljs-string">"0"</span>)                  <span class="hljs-comment"># True — non-empty string is always truthy</span></code></pre>
+
+      <h3>Naming rules</h3>
+      <ul>
+        <li>Letters, digits, underscores only; cannot start with a digit.</li>
+        <li>Case-sensitive: <code>age</code> and <code>Age</code> are different names.</li>
+        <li>Cannot be a reserved keyword (<code>if</code>, <code>for</code>, <code>class</code>, <code>return</code>, …).</li>
+        <li>Convention: <code>snake_case</code> for variables and functions, <code>PascalCase</code> for classes, <code>UPPER_SNAKE</code> for constants.</li>
+      </ul>
+
+      <h3>Multiple and augmented assignment</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">a, b = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>          <span class="hljs-comment"># tuple unpacking assignment</span>
+a, b = b, a              <span class="hljs-comment"># swap without a temp variable</span>
+
+x = y = z = <span class="hljs-number">0</span>               <span class="hljs-comment"># chained assignment — all bind to the same object</span>
+
+count = <span class="hljs-number">0</span>
+count += <span class="hljs-number">1</span>     <span class="hljs-comment"># count = count + 1</span>
+count *= <span class="hljs-number">3</span>      <span class="hljs-comment"># count = count * 3</span></code></pre>
+
+      <h3>Operator precedence (arithmetic)</h3>
+      <p>Highest to lowest binding: <code>()</code> → <code>**</code> → unary <code>+ - ~</code> → <code>* / // %</code> → <code>+ -</code>. Exponentiation is right-associative: <code>2 ** 3 ** 2</code> is <code>2 ** (3 ** 2)</code> = 512.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-number">10</span> // <span class="hljs-number">3</span>    <span class="hljs-comment"># 3  — floor (integer) division</span>
+<span class="hljs-number">10</span> % <span class="hljs-number">3</span>      <span class="hljs-comment"># 1  — modulo/remainder</span>
+<span class="hljs-number">2</span> ** <span class="hljs-number">10</span>      <span class="hljs-comment"># 1024 — exponentiation</span>
+-<span class="hljs-number">3</span> ** <span class="hljs-number">2</span>       <span class="hljs-comment"># -9 — unary minus binds looser than **</span></code></pre>
+
+      <h3>Literals</h3>
+      <p>A literal is data written directly into source code, as opposed to a value computed at runtime. <code>25</code>, <code>3.14</code>, <code>"hi"</code>, and <code>True</code> are all literals.</p>
+
+      <h3>The print() function</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello, World!"</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>)                    <span class="hljs-comment"># multiple positional arguments</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>, sep=<span class="hljs-string">"-"</span>)             <span class="hljs-comment"># "a-b-c" — custom separator</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Loading"</span>, end=<span class="hljs-string">"..."</span>)                 <span class="hljs-comment"># "end" replaces the default trailing newline</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"done"</span>)                                  <span class="hljs-comment"># continues on same line as above</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Tab:\tNewline:\nDone"</span>)                     <span class="hljs-comment"># escape characters inside a string</span></code></pre>
+      <p><code>sep</code> and <code>end</code> are keyword arguments with defaults <code>" "</code> and <code>"\n"</code> respectively — this is the canonical example PE1 uses to introduce positional vs. keyword arguments before functions are formally covered.</p>
+
+      <h3>The input() function and type casting</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">name = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Enter your name: "</span>)     <span class="hljs-comment"># input() always returns a str</span>
+age_text = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Enter your age: "</span>)
+age = <span class="hljs-built_in">int</span>(age_text)                       <span class="hljs-comment"># must cast explicitly to use as a number</span>
+
+<span class="hljs-comment"># common one-liner pattern</span>
+age = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">"Enter your age: "</span>))</code></pre>
+      <div class="note"><strong>PROHIBITED OPERATION</strong>
+      <code>input("Age: ") + 5</code> raises <code>TypeError</code> — <code>input()</code> returns a string, and Python does not implicitly convert a string to a number for arithmetic. Cast with <code>int()</code> or <code>float()</code> first.</div>
+
+      <h3>String operators</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-string">"Py"</span> + <span class="hljs-string">"thon"</span>        <span class="hljs-comment"># "Python" — concatenation</span>
+<span class="hljs-string">"ab"</span> * <span class="hljs-number">3</span>                <span class="hljs-comment"># "ababab" — repetition</span>
+<span class="hljs-string">"th"</span> <span class="hljs-keyword">in</span> <span class="hljs-string">"Python"</span>          <span class="hljs-comment"># True — membership</span></code></pre>
+
+      <h3>Comments</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-comment"># this is a full-line comment</span>
+
+age = <span class="hljs-number">25</span>   <span class="hljs-comment"># this is an inline comment, explaining the line</span>
+
+<span class="hljs-comment"># Comments are ignored entirely by the interpreter —</span>
+<span class="hljs-comment"># they exist purely for human readers of the code.</span></code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Swap the values of two variables <code>a</code> and <code>b</code> without using a temporary third variable.</p>
+          <button class="problem-toggle" onclick="toggleSol('t1s1', this)">Show solution</button>
+          <div class="solution" id="t1s1"><pre><code class="language-python hljs" data-highlighted="yes">a, b = <span class="hljs-number">5</span>, <span class="hljs-number">10</span>
+a, b = b, a
+<span class="hljs-built_in">print</span>(a, b)   <span class="hljs-comment"># 10 5</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Given a Celsius temperature in a variable <code>celsius</code>, convert it to Fahrenheit and print it formatted to 1 decimal place.</p>
+          <button class="problem-toggle" onclick="toggleSol('t1s2', this)">Show solution</button>
+          <div class="solution" id="t1s2"><pre><code class="language-python hljs" data-highlighted="yes">celsius = <span class="hljs-number">23</span>
+fahrenheit = celsius * <span class="hljs-number">9</span> / <span class="hljs-number">5</span> + <span class="hljs-number">32</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{fahrenheit:<span class="hljs-number">.1</span>f}</span>"</span>)   <span class="hljs-comment"># 73.4</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">What does the following print, and why? <code>x = 5; y = x; x += 1; print(y)</code></p>
+          <button class="problem-toggle" onclick="toggleSol('t1s3', this)">Show solution</button>
+          <div class="solution" id="t1s3"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-comment"># Prints 5.</span>
+<span class="hljs-comment"># int is immutable — x += 1 rebinds x to a NEW object (6),</span>
+<span class="hljs-comment"># it does not mutate the object y still refers to.</span>
+x = <span class="hljs-number">5</span>
+y = x
+x += <span class="hljs-number">1</span>
+<span class="hljs-built_in">print</span>(y)   <span class="hljs-comment"># 5</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><span></span><button onclick="go(2)">Next: Conditionals →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="2" id="topic-2">
+      <span class="kicker">02 / 08</span>
+      <h2>Conditionals</h2>
+      <p class="intro">Conditional execution branches program flow based on boolean expressions. Python uses indentation — not braces — to define blocks, making consistent whitespace a syntax requirement, not a style preference.</p>
+
+      <h3>if / elif / else</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">score = <span class="hljs-number">78</span>
+
+<span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">90</span>:
+    grade = <span class="hljs-string">"A"</span>
+<span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">75</span>:
+    grade = <span class="hljs-string">"B"</span>
+<span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">60</span>:
+    grade = <span class="hljs-string">"C"</span>
+<span class="hljs-keyword">else</span>:
+    grade = <span class="hljs-string">"F"</span>
+
+<span class="hljs-built_in">print</span>(grade)   <span class="hljs-comment"># B</span></code></pre>
+      <p>Only one branch executes. <code>elif</code> chains are evaluated top to bottom; the first true condition wins and the rest are skipped.</p>
+
+      <h3>Comparison and logical operators</h3>
+      <table>
+        <tbody><tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>==</code> / <code>!=</code></td><td>Equal / not equal</td></tr>
+        <tr><td><code>&lt; &gt; &lt;= &gt;=</code></td><td>Ordering comparisons</td></tr>
+        <tr><td><code>and</code></td><td>True if both operands are true</td></tr>
+        <tr><td><code>or</code></td><td>True if at least one operand is true</td></tr>
+        <tr><td><code>not</code></td><td>Boolean negation</td></tr>
+      </tbody></table>
+      <p><code>and</code>/<code>or</code> short-circuit: in <code>a() or b()</code>, <code>b()</code> only runs if <code>a()</code> is falsy. This is often used for default values: <code>name = input_name or "Guest"</code>.</p>
+
+      <h3>Truthy and falsy values</h3>
+      <p>Every object has an implicit boolean value when used in a condition. Falsy: <code>0</code>, <code>0.0</code>, <code>""</code>, <code>[]</code>, <code>{}</code>, <code>()</code>, <code>set()</code>, <code>None</code>, <code>False</code>. Everything else — including any non-empty string, list, or nonzero number — is truthy.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes">name = <span class="hljs-string">""</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> name:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Name is empty"</span>)
+
+items = []
+<span class="hljs-keyword">if</span> items:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Has items"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Empty list"</span>)   <span class="hljs-comment"># this runs</span></code></pre>
+
+      <h3>Chained comparisons</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; score &lt; <span class="hljs-number">100</span>:      <span class="hljs-comment"># equivalent to: 0 &lt; score and score &lt; 100</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Valid score"</span>)</code></pre>
+
+      <h3>Conditional (ternary) expression</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">status = <span class="hljs-string">"pass"</span> <span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">60</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"fail"</span>
+
+<span class="hljs-comment"># nested — use sparingly, readability drops fast</span>
+label = <span class="hljs-string">"A"</span> <span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">90</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"B"</span> <span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">75</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"C"</span></code></pre>
+
+      <h3>Nested conditionals and <code>pass</code></h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">60</span>:
+    <span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">90</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Distinction"</span>)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Pass"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>   <span class="hljs-comment"># placeholder — do nothing, block cannot be empty</span></code></pre>
+
+      <div class="note"><strong>COMMON PITFALL</strong>
+      <code>=</code> is assignment, <code>==</code> is comparison. <code>if x = 5:</code> is a <code>SyntaxError</code> in Python — unlike C, Python does not allow assignment inside a condition by accident, which prevents a classic bug class.</div>
+
+      <h3>Bitwise operators</h3>
+      <p>Bitwise operators act on the binary representation of integers, bit by bit — distinct from the logical <code>and</code>/<code>or</code>/<code>not</code>, which act on whole truth values.</p>
+      <table>
+        <tbody><tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+        <tr><td><code>&amp;</code></td><td>AND</td><td><code>6 &amp; 3</code></td><td>2</td></tr>
+        <tr><td><code>|</code></td><td>OR</td><td><code>6 | 3</code></td><td>7</td></tr>
+        <tr><td><code>^</code></td><td>XOR</td><td><code>6 ^ 3</code></td><td>5</td></tr>
+        <tr><td><code>~</code></td><td>NOT</td><td><code>~6</code></td><td>-7</td></tr>
+        <tr><td><code>&lt;&lt;</code></td><td>Left shift</td><td><code>3 &lt;&lt; 2</code></td><td>12</td></tr>
+        <tr><td><code>&gt;&gt;</code></td><td>Right shift</td><td><code>12 &gt;&gt; 2</code></td><td>3</td></tr>
+      </tbody></table>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-number">6</span> &amp; <span class="hljs-number">3</span>     <span class="hljs-comment"># 0b0110 &amp; 0b0011 = 0b0010 = 2</span>
+<span class="hljs-number">6</span> | <span class="hljs-number">3</span>      <span class="hljs-comment"># 0b0110 | 0b0011 = 0b0111 = 7</span>
+<span class="hljs-number">3</span> &lt;&lt; <span class="hljs-number">2</span>      <span class="hljs-comment"># shifts bits left by 2 places — equivalent to 3 * (2**2) = 12</span>
+<span class="hljs-number">12</span> &gt;&gt; <span class="hljs-number">2</span>      <span class="hljs-comment"># shifts bits right by 2 places — equivalent to 12 // (2**2) = 3</span></code></pre>
+      <p>Left shift by <em>n</em> is equivalent to multiplying by 2ⁿ; right shift by <em>n</em> is equivalent to floor-dividing by 2ⁿ.</p>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Write an if/elif/else chain that classifies a number as <code>"negative"</code>, <code>"zero"</code>, or <code>"positive"</code>.</p>
+          <button class="problem-toggle" onclick="toggleSol('t2s1', this)">Show solution</button>
+          <div class="solution" id="t2s1"><pre><code class="language-python hljs" data-highlighted="yes">n = -<span class="hljs-number">7</span>
+<span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>:
+    result = <span class="hljs-string">"negative"</span>
+<span class="hljs-keyword">elif</span> n == <span class="hljs-number">0</span>:
+    result = <span class="hljs-string">"zero"</span>
+<span class="hljs-keyword">else</span>:
+    result = <span class="hljs-string">"positive"</span>
+<span class="hljs-built_in">print</span>(result)   <span class="hljs-comment"># negative</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Given three numbers <code>a</code>, <code>b</code>, <code>c</code>, write a single expression using chained comparison to check if <code>b</code> lies between <code>a</code> and <code>c</code>.</p>
+          <button class="problem-toggle" onclick="toggleSol('t2s2', this)">Show solution</button>
+          <div class="solution" id="t2s2"><pre><code class="language-python hljs" data-highlighted="yes">a, b, c = <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>
+is_between = a &lt; b &lt; c
+<span class="hljs-built_in">print</span>(is_between)   <span class="hljs-comment"># True</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Using a bitwise operator (not <code>%</code>), write an expression that checks if an integer <code>n</code> is even.</p>
+          <button class="problem-toggle" onclick="toggleSol('t2s3', this)">Show solution</button>
+          <div class="solution" id="t2s3"><pre><code class="language-python hljs" data-highlighted="yes">n = <span class="hljs-number">42</span>
+is_even = (n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>   <span class="hljs-comment"># last bit is 0 for every even number</span>
+<span class="hljs-built_in">print</span>(is_even)   <span class="hljs-comment"># True</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(1)">← Variables</button><button onclick="go(3)">Next: Loops →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="3" id="topic-3">
+      <span class="kicker">03 / 08</span>
+      <h2>Loops</h2>
+      <p class="intro">Python provides two loop constructs: <code>for</code>, which iterates over any iterable, and <code>while</code>, which repeats while a condition holds. Both support <code>break</code>, <code>continue</code>, and an unusual <code>else</code> clause.</p>
+
+      <h3>for loop</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):        <span class="hljs-comment"># 0, 1, 2, 3, 4</span>
+    <span class="hljs-built_in">print</span>(i)
+
+fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"mango"</span>, <span class="hljs-string">"kiwi"</span>]
+<span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> fruits:
+    <span class="hljs-built_in">print</span>(fruit)
+
+<span class="hljs-keyword">for</span> i, fruit <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(fruits):      <span class="hljs-comment"># index + value together</span>
+    <span class="hljs-built_in">print</span>(i, fruit)
+
+names = [<span class="hljs-string">"Bimal"</span>, <span class="hljs-string">"Nathaliya"</span>]
+ages = [<span class="hljs-number">53</span>, <span class="hljs-number">20</span>]
+<span class="hljs-keyword">for</span> name, age <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(names, ages):        <span class="hljs-comment"># parallel iteration</span>
+    <span class="hljs-built_in">print</span>(name, age)</code></pre>
+
+      <h3>range() signature</h3>
+      <table>
+        <tbody><tr><th>Call</th><th>Produces</th></tr>
+        <tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td></tr>
+        <tr><td><code>range(2, 8)</code></td><td>2, 3, 4, 5, 6, 7</td></tr>
+        <tr><td><code>range(2, 10, 2)</code></td><td>2, 4, 6, 8</td></tr>
+        <tr><td><code>range(10, 0, -2)</code></td><td>10, 8, 6, 4, 2</td></tr>
+      </tbody></table>
+      <p><code>range()</code> is lazy — it produces values on demand rather than building a full list in memory, which matters for large ranges.</p>
+
+      <h3>while loop</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">count = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> count &lt; <span class="hljs-number">5</span>:
+    <span class="hljs-built_in">print</span>(count)
+    count += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># deliberate infinite loop, exited via break</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    response = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Continue? (y/n): "</span>)
+    <span class="hljs-keyword">if</span> response == <span class="hljs-string">"n"</span>:
+        <span class="hljs-keyword">break</span></code></pre>
+
+      <h3>break, continue, and the loop else</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+    <span class="hljs-keyword">if</span> i == <span class="hljs-number">3</span>:
+        <span class="hljs-keyword">continue</span>       <span class="hljs-comment"># skip rest of this iteration, go to next</span>
+    <span class="hljs-keyword">if</span> i == <span class="hljs-number">7</span>:
+        <span class="hljs-keyword">break</span>            <span class="hljs-comment"># exit the loop immediately</span>
+    <span class="hljs-built_in">print</span>(i)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Completed without break"</span>)   <span class="hljs-comment"># runs only if loop finished naturally</span>
+
+<span class="hljs-comment"># practical use: search with a "not found" fallback</span>
+target = <span class="hljs-number">11</span>
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>]:
+    <span class="hljs-keyword">if</span> n == target:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Found"</span>)
+        <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Not found"</span>)    <span class="hljs-comment"># this runs — loop never broke</span></code></pre>
+
+      <h3>Nested loops</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>):
+    <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"(<span class="hljs-subst">{row}</span>,<span class="hljs-subst">{col}</span>)"</span>, end=<span class="hljs-string">" "</span>)
+    <span class="hljs-built_in">print</span>()</code></pre>
+
+      <div class="note"><strong>COMMON PITFALL</strong>
+      Never remove items from a list while iterating over it directly — indices shift and items get skipped. Iterate over a copy (<code>for x in list[:]:</code>) or build a new list instead.</div>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Print all numbers from 1 to 50 that are divisible by 3 or 5, using a <code>for</code> loop.</p>
+          <button class="problem-toggle" onclick="toggleSol('t3s1', this)">Show solution</button>
+          <div class="solution" id="t3s1"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">51</span>):
+    <span class="hljs-keyword">if</span> n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">print</span>(n)</code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Write a <code>while</code> loop that keeps asking the user for input until they type <code>"quit"</code>.</p>
+          <button class="problem-toggle" onclick="toggleSol('t3s2', this)">Show solution</button>
+          <div class="solution" id="t3s2"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    response = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Enter a command (or 'quit'): "</span>)
+    <span class="hljs-keyword">if</span> response == <span class="hljs-string">"quit"</span>:
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"You entered: <span class="hljs-subst">{response}</span>"</span>)</code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Use a <code>for...else</code> loop to search a list for the first negative number, printing <code>"None found"</code> if there isn't one.</p>
+          <button class="problem-toggle" onclick="toggleSol('t3s3', this)">Show solution</button>
+          <div class="solution" id="t3s3"><pre><code class="language-python hljs" data-highlighted="yes">numbers = [<span class="hljs-number">4</span>, <span class="hljs-number">12</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>]
+
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> numbers:
+    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"Found: <span class="hljs-subst">{n}</span>"</span>)
+        <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"None found"</span>)</code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(2)">← Conditionals</button><button onclick="go(4)">Next: Functions →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="4" id="topic-4">
+      <span class="kicker">04 / 08</span>
+      <h2>Functions, Parameters, Return Values</h2>
+      <p class="intro">Functions package reusable logic behind a name. Python functions are first-class objects — they can be passed around, stored in collections, and returned from other functions.</p>
+
+      <h3>Defining and calling</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>):
+    <span class="hljs-string">"""Return a friendly greeting for the given name."""</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f"Hello, <span class="hljs-subst">{name}</span>!"</span>
+
+result = greet(<span class="hljs-string">"Bimzy"</span>)
+<span class="hljs-built_in">print</span>(greet.__doc__)   <span class="hljs-comment"># prints the docstring</span></code></pre>
+
+      <h3>Default and keyword arguments</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">power</span>(<span class="hljs-params">base, exponent=<span class="hljs-number">2</span></span>):
+    <span class="hljs-keyword">return</span> base ** exponent
+
+power(<span class="hljs-number">5</span>)          <span class="hljs-comment"># 25   — uses default exponent</span>
+power(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)        <span class="hljs-comment"># 125</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">describe</span>(<span class="hljs-params">name, age, city</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{name}</span>, <span class="hljs-subst">{age}</span>, <span class="hljs-subst">{city}</span>"</span>
+
+describe(age=<span class="hljs-number">30</span>, name=<span class="hljs-string">"Nathaliya"</span>, city=<span class="hljs-string">"Colombo"</span>)   <span class="hljs-comment"># order doesn't matter with keywords</span></code></pre>
+
+      <h3>Variable-length arguments</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">total</span>(<span class="hljs-params">*args</span>):               <span class="hljs-comment"># collects extra positional args into a tuple</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(args)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">config</span>(<span class="hljs-params">**kwargs</span>):             <span class="hljs-comment"># collects extra keyword args into a dict</span>
+    <span class="hljs-keyword">return</span> kwargs
+
+total(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)                       <span class="hljs-comment"># 6</span>
+config(host=<span class="hljs-string">"local"</span>, port=<span class="hljs-number">8080</span>)        <span class="hljs-comment"># {'host': 'local', 'port': 8080}</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">report</span>(<span class="hljs-params">title, *values, **meta</span>):     <span class="hljs-comment"># combining all forms</span>
+    <span class="hljs-built_in">print</span>(title, values, meta)
+
+report(<span class="hljs-string">"Sales"</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, region=<span class="hljs-string">"APAC"</span>)</code></pre>
+
+      <h3>Positional-only and keyword-only parameters</h3>
+      <p>The <code>/</code> and <code>*</code> markers in a signature restrict how arguments may be passed — useful for API clarity.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">move</span>(<span class="hljs-params">x, y, /, *, speed=<span class="hljs-number">1</span></span>):
+    <span class="hljs-comment"># x, y: positional-only (before /)</span>
+    <span class="hljs-comment"># speed: keyword-only (after *)</span>
+    <span class="hljs-keyword">return</span> (x + speed, y + speed)
+
+move(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, speed=<span class="hljs-number">2</span>)     <span class="hljs-comment"># OK</span>
+move(x=<span class="hljs-number">3</span>, y=<span class="hljs-number">4</span>)              <span class="hljs-comment"># TypeError — x, y are positional-only</span></code></pre>
+
+      <h3>Return values</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">divide</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">if</span> b == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>        <span class="hljs-comment"># explicit "no result"</span>
+    <span class="hljs-keyword">return</span> a / b
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">min_max</span>(<span class="hljs-params">numbers</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(numbers), <span class="hljs-built_in">max</span>(numbers)   <span class="hljs-comment"># returns a tuple</span>
+
+low, high = min_max([<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span>])         <span class="hljs-comment"># unpacked directly</span></code></pre>
+      <p>A function with no explicit <code>return</code> statement returns <code>None</code> implicitly.</p>
+
+      <h3>Scope: local, global, nonlocal</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">counter = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>():
+    <span class="hljs-keyword">global</span> counter        <span class="hljs-comment"># without this, counter += 1 raises UnboundLocalError</span>
+    counter += <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">outer</span>():
+    total = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">inner</span>():
+        <span class="hljs-keyword">nonlocal</span> total     <span class="hljs-comment"># modifies the enclosing function's variable</span>
+        total += <span class="hljs-number">1</span>
+    inner()
+    <span class="hljs-keyword">return</span> total</code></pre>
+      <p>Python resolves names using the <strong>LEGB</strong> rule: Local → Enclosing → Global → Built-in, searched in that order.</p>
+
+      <h3>Functions as first-class objects</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">x</span>):
+    <span class="hljs-keyword">return</span> x * x
+
+funcs = [square, <span class="hljs-built_in">abs</span>, <span class="hljs-built_in">str</span>]      <span class="hljs-comment"># stored in a list like any value</span>
+[f(-<span class="hljs-number">4</span>) <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> [square, <span class="hljs-built_in">abs</span>]]     <span class="hljs-comment"># [16, 4]</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">apply_twice</span>(<span class="hljs-params">f, x</span>):
+    <span class="hljs-keyword">return</span> f(f(x))
+
+apply_twice(square, <span class="hljs-number">3</span>)        <span class="hljs-comment"># 81</span></code></pre>
+
+      <h3>Lambda functions</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">square = <span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>
+add = <span class="hljs-keyword">lambda</span> a, b: a + b
+
+names = [<span class="hljs-string">"Nathaliya"</span>, <span class="hljs-string">"Bimal"</span>, <span class="hljs-string">"Hasthi"</span>]
+names.sort(key=<span class="hljs-keyword">lambda</span> n: <span class="hljs-built_in">len</span>(n))     <span class="hljs-comment"># sort by length, using a throwaway function</span></code></pre>
+
+      <h3>Recursion</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:            <span class="hljs-comment"># base case — stops the recursion</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> n * factorial(n - <span class="hljs-number">1</span>)   <span class="hljs-comment"># recursive case</span>
+
+factorial(<span class="hljs-number">5</span>)   <span class="hljs-comment"># 120</span></code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Write a function <code>is_palindrome(s)</code> that returns <code>True</code> if a string reads the same forwards and backwards.</p>
+          <button class="problem-toggle" onclick="toggleSol('t4s1', this)">Show solution</button>
+          <div class="solution" id="t4s1"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_palindrome</span>(<span class="hljs-params">s</span>):
+    <span class="hljs-keyword">return</span> s == s[::-<span class="hljs-number">1</span>]
+
+is_palindrome(<span class="hljs-string">"level"</span>)    <span class="hljs-comment"># True</span>
+is_palindrome(<span class="hljs-string">"python"</span>)     <span class="hljs-comment"># False</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Write a function <code>stats(*numbers)</code> that returns a tuple of <code>(minimum, maximum, average)</code> for any number of arguments.</p>
+          <button class="problem-toggle" onclick="toggleSol('t4s2', this)">Show solution</button>
+          <div class="solution" id="t4s2"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">stats</span>(<span class="hljs-params">*numbers</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(numbers), <span class="hljs-built_in">max</span>(numbers), <span class="hljs-built_in">sum</span>(numbers) / <span class="hljs-built_in">len</span>(numbers)
+
+stats(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)   <span class="hljs-comment"># (2, 10, 6.0)</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Write a recursive function <code>fibonacci(n)</code> that returns the n-th Fibonacci number (0-indexed).</p>
+          <button class="problem-toggle" onclick="toggleSol('t4s3', this)">Show solution</button>
+          <div class="solution" id="t4s3"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fibonacci</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> n
+    <span class="hljs-keyword">return</span> fibonacci(n - <span class="hljs-number">1</span>) + fibonacci(n - <span class="hljs-number">2</span>)
+
+[fibonacci(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)]   <span class="hljs-comment"># [0, 1, 1, 2, 3, 5, 8, 13]</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(3)">← Loops</button><button onclick="go(5)">Next: Collections →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="5" id="topic-5">
+      <span class="kicker">05 / 08</span>
+      <h2>Core Collections: list, tuple, dict, set</h2>
+      <p class="intro">Python's four built-in collection types cover most data-structuring needs. Choosing the right one depends on whether order, mutability, and duplicates matter for the task.</p>
+
+      <table>
+        <tbody><tr><th>Collection</th><th>Ordered</th><th>Mutable</th><th>Duplicates</th><th>Syntax</th></tr>
+        <tr><td><code>list</code></td><td>Yes</td><td>Yes</td><td>Yes</td><td><code>[1, 2, 3]</code></td></tr>
+        <tr><td><code>tuple</code></td><td>Yes</td><td>No</td><td>Yes</td><td><code>(1, 2, 3)</code></td></tr>
+        <tr><td><code>dict</code></td><td>Yes (3.7+)</td><td>Yes</td><td>Unique keys</td><td><code>{"a": 1}</code></td></tr>
+        <tr><td><code>set</code></td><td>No</td><td>Yes</td><td>No</td><td><code>{1, 2, 3}</code></td></tr>
+      </tbody></table>
+
+      <h3>list</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">nums = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>]
+
+nums.append(<span class="hljs-number">9</span>)         <span class="hljs-comment"># add to end</span>
+nums.insert(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>)      <span class="hljs-comment"># insert at index</span>
+nums.remove(<span class="hljs-number">1</span>)             <span class="hljs-comment"># removes first matching value (not index)</span>
+popped = nums.pop()          <span class="hljs-comment"># removes and returns last item</span>
+nums.sort()                    <span class="hljs-comment"># in-place ascending sort</span>
+nums.sort(reverse=<span class="hljs-literal">True</span>)          <span class="hljs-comment"># descending</span>
+nums.reverse()                     <span class="hljs-comment"># in-place reverse</span>
+nums.index(<span class="hljs-number">4</span>)                        <span class="hljs-comment"># first index of value 4</span>
+nums.count(<span class="hljs-number">1</span>)                          <span class="hljs-comment"># how many times 1 appears</span>
+
+nums[<span class="hljs-number">0</span>]           <span class="hljs-comment"># indexing</span>
+nums[-<span class="hljs-number">1</span>]            <span class="hljs-comment"># last element</span>
+nums[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]             <span class="hljs-comment"># slice — items at index 1, 2</span>
+nums[::-<span class="hljs-number">1</span>]              <span class="hljs-comment"># reversed copy</span>
+nums[::<span class="hljs-number">2</span>]                 <span class="hljs-comment"># every second item</span>
+
+squares = [x**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> nums]              <span class="hljs-comment"># list comprehension</span>
+evens = [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> nums <span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]        <span class="hljs-comment"># with filter</span></code></pre>
+
+      <div class="note"><strong>MUTABILITY AND ALIASING</strong>
+      <code>b = a</code> for a list does not copy it — both names point to the same object, so mutating <code>b</code> mutates <code>a</code> too. Use <code>b = a.copy()</code> or <code>b = a[:]</code> for a shallow copy, or <code>copy.deepcopy(a)</code> for nested structures.</div>
+
+      <h3>Functions vs. methods</h3>
+      <p>PE1 draws a deliberate distinction: <code>len(nums)</code> is a <strong>function</strong> — it takes the list as an argument. <code>nums.append(9)</code> is a <strong>method</strong> — it's called on the list object itself via dot notation. Both are common, but they aren't interchangeable: there's no <code>nums.len()</code>, and no <code>append(nums, 9)</code>.</p>
+
+      <h3>The in / not in operators</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">nums = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>]
+
+<span class="hljs-number">4</span> <span class="hljs-keyword">in</span> nums          <span class="hljs-comment"># True — membership test</span>
+<span class="hljs-number">9</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> nums         <span class="hljs-comment"># True — 9 isn't in the list</span></code></pre>
+
+      <h3>Sorting: the bubble sort algorithm</h3>
+      <p>PE1 introduces sorting through bubble sort specifically — not because it's efficient (it isn't; O(n²)), but because it's simple enough to build by hand and illustrates how an algorithm is constructed from loops and conditionals.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">bubble_sort</span>(<span class="hljs-params">data</span>):
+    n = <span class="hljs-built_in">len</span>(data)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">1</span>):                  <span class="hljs-comment"># outer pass</span>
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">1</span> - i):            <span class="hljs-comment"># inner comparison</span>
+            <span class="hljs-keyword">if</span> data[j] &gt; data[j + <span class="hljs-number">1</span>]:
+                data[j], data[j + <span class="hljs-number">1</span>] = data[j + <span class="hljs-number">1</span>], data[j]   <span class="hljs-comment"># swap</span>
+    <span class="hljs-keyword">return</span> data
+
+bubble_sort([<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>])   <span class="hljs-comment"># [1, 2, 5, 5, 6, 9]</span></code></pre>
+      <p>Each full pass "bubbles" the largest remaining unsorted value to its correct position at the end of the list. Python's built-in <code>.sort()</code> uses a far more efficient algorithm (Timsort) — bubble sort here is a teaching exercise in algorithmic thinking, not a recommended production tool.</p>
+
+      <h3>Lists in lists: two-dimensional arrays</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">grid = [
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+    [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+    [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+]
+
+grid[<span class="hljs-number">0</span>]          <span class="hljs-comment"># [1, 2, 3] — the first row</span>
+grid[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>]         <span class="hljs-comment"># 3 — row 0, column 2</span>
+grid[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">50</span>       <span class="hljs-comment"># modify a single cell</span>
+
+<span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> grid:                       <span class="hljs-comment"># iterate rows</span>
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> row:                     <span class="hljs-comment"># iterate values within a row</span>
+        <span class="hljs-built_in">print</span>(value, end=<span class="hljs-string">" "</span>)
+    <span class="hljs-built_in">print</span>()</code></pre>
+      <div class="note"><strong>COMMON PITFALL</strong>
+      <code>grid = [[0] * 3] * 3</code> looks like a 3×3 zero grid but isn't — all three inner lists are <em>the same object</em> repeated by reference. Modifying one row modifies all of them. Build nested lists with a comprehension instead: <code>[[0] * 3 for _ in range(3)]</code>.</div>
+
+      <h3>tuple</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">point = (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+x, y = point              <span class="hljs-comment"># unpacking</span>
+
+single = (<span class="hljs-number">5</span>,)                <span class="hljs-comment"># trailing comma required — (5) is just an int in parens</span>
+empty = ()
+
+point[<span class="hljs-number">0</span>] = <span class="hljs-number">9</span>                    <span class="hljs-comment"># TypeError — tuples are immutable</span></code></pre>
+      <p>Use a tuple when the collection represents a fixed structure (coordinates, a database row) rather than a growing list of items — the immutability signals intent and prevents accidental modification.</p>
+
+      <h3>dict</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">person = {<span class="hljs-string">"name"</span>: <span class="hljs-string">"Bimal"</span>, <span class="hljs-string">"role"</span>: <span class="hljs-string">"Advisor"</span>}
+
+person[<span class="hljs-string">"age"</span>] = <span class="hljs-number">53</span>                  <span class="hljs-comment"># add/update a key</span>
+person.get(<span class="hljs-string">"age"</span>, <span class="hljs-number">0</span>)                   <span class="hljs-comment"># safe access — returns 0 if missing</span>
+person.pop(<span class="hljs-string">"role"</span>)                       <span class="hljs-comment"># remove and return value</span>
+person.setdefault(<span class="hljs-string">"age"</span>, <span class="hljs-number">0</span>)                <span class="hljs-comment"># sets key only if absent</span>
+
+<span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> person:                             <span class="hljs-comment"># iterates keys by default</span>
+    <span class="hljs-built_in">print</span>(key)
+<span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> person.items():                <span class="hljs-comment"># keys + values</span>
+    <span class="hljs-built_in">print</span>(key, value)
+<span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> person.values():                       <span class="hljs-comment"># values only</span>
+    <span class="hljs-built_in">print</span>(value)
+
+squares = {n: n**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>)}                  <span class="hljs-comment"># dict comprehension</span></code></pre>
+
+      <h3>set</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">tags = {<span class="hljs-string">"tea"</span>, <span class="hljs-string">"finance"</span>, <span class="hljs-string">"energy"</span>}
+
+tags.add(<span class="hljs-string">"cricket"</span>)
+tags.discard(<span class="hljs-string">"energy"</span>)       <span class="hljs-comment"># remove if present, no error if missing</span>
+tags.remove(<span class="hljs-string">"finance"</span>)          <span class="hljs-comment"># remove — raises KeyError if missing</span>
+
+a = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+b = {<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>}
+a | b     <span class="hljs-comment"># union: {1, 2, 3, 4}</span>
+a &amp; b      <span class="hljs-comment"># intersection: {2, 3}</span>
+a - b       <span class="hljs-comment"># difference: {1}</span>
+a ^ b        <span class="hljs-comment"># symmetric difference: {1, 4}</span>
+
+unique = {x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]}     <span class="hljs-comment"># set comprehension — dedupes automatically</span>
+frozen = <span class="hljs-built_in">frozenset</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])                <span class="hljs-comment"># immutable variant, usable as a dict key</span></code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Given a list of numbers, write a one-line list comprehension that returns only the squares of the even numbers.</p>
+          <button class="problem-toggle" onclick="toggleSol('t5s1', this)">Show solution</button>
+          <div class="solution" id="t5s1"><pre><code class="language-python hljs" data-highlighted="yes">nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+even_squares = [n**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> nums <span class="hljs-keyword">if</span> n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
+<span class="hljs-built_in">print</span>(even_squares)   <span class="hljs-comment"># [4, 16, 36]</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Write a function that takes a list of words and returns a dict mapping each word to its length.</p>
+          <button class="problem-toggle" onclick="toggleSol('t5s2', this)">Show solution</button>
+          <div class="solution" id="t5s2"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">word_lengths</span>(<span class="hljs-params">words</span>):
+    <span class="hljs-keyword">return</span> {word: <span class="hljs-built_in">len</span>(word) <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words}
+
+word_lengths([<span class="hljs-string">"tea"</span>, <span class="hljs-string">"cricket"</span>, <span class="hljs-string">"solar"</span>])
+<span class="hljs-comment"># {'tea': 3, 'cricket': 7, 'solar': 5}</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Given two lists, use sets to find the elements that appear in both.</p>
+          <button class="problem-toggle" onclick="toggleSol('t5s3', this)">Show solution</button>
+          <div class="solution" id="t5s3"><pre><code class="language-python hljs" data-highlighted="yes">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+b = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]
+
+common = <span class="hljs-built_in">set</span>(a) &amp; <span class="hljs-built_in">set</span>(b)
+<span class="hljs-built_in">print</span>(common)   <span class="hljs-comment"># {4, 5}</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(4)">← Functions</button><button onclick="go(6)">Next: Strings →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="6" id="topic-6">
+      <span class="kicker">06 / 08</span>
+      <h2>String Handling and Formatting</h2>
+      <p class="intro">Strings are immutable sequences of Unicode characters. Every "modifying" operation returns a new string rather than changing the original in place.</p>
+
+      <h3>Indexing and slicing</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">s = <span class="hljs-string">"Python Essentials"</span>
+
+s[<span class="hljs-number">0</span>]         <span class="hljs-comment"># 'P'</span>
+s[-<span class="hljs-number">1</span>]          <span class="hljs-comment"># 's' — negative indices count from the end</span>
+s[<span class="hljs-number">0</span>:<span class="hljs-number">6</span>]           <span class="hljs-comment"># 'Python'</span>
+s[<span class="hljs-number">7</span>:]              <span class="hljs-comment"># 'Essentials'</span>
+s[::-<span class="hljs-number">1</span>]              <span class="hljs-comment"># 'slaitnessE nohtyP' — reversed</span>
+<span class="hljs-built_in">len</span>(s)                  <span class="hljs-comment"># 18</span>
+<span class="hljs-string">"Py"</span> <span class="hljs-keyword">in</span> s                  <span class="hljs-comment"># True — membership test</span></code></pre>
+
+      <h3>Common string methods</h3>
+      <table>
+        <tbody><tr><th>Method</th><th>Effect</th></tr>
+        <tr><td><code>.lower()</code> / <code>.upper()</code></td><td>Case conversion</td></tr>
+        <tr><td><code>.title()</code> / <code>.capitalize()</code></td><td>"the tea" → "The Tea" / "The tea"</td></tr>
+        <tr><td><code>.strip()</code> / <code>.lstrip()</code> / <code>.rstrip()</code></td><td>Remove whitespace (or given chars) from ends</td></tr>
+        <tr><td><code>.split(sep)</code></td><td>String → list of substrings</td></tr>
+        <tr><td><code>.join(iterable)</code></td><td>List of strings → single string</td></tr>
+        <tr><td><code>.replace(old, new)</code></td><td>Substring substitution</td></tr>
+        <tr><td><code>.find(sub)</code> / <code>.index(sub)</code></td><td>Position of substring — <code>find</code> returns -1 if missing, <code>index</code> raises</td></tr>
+        <tr><td><code>.startswith()</code> / <code>.endswith()</code></td><td>Prefix/suffix test</td></tr>
+        <tr><td><code>.isdigit()</code> / <code>.isalpha()</code> / <code>.isalnum()</code></td><td>Character-class checks</td></tr>
+        <tr><td><code>.count(sub)</code></td><td>Occurrences of a substring</td></tr>
+      </tbody></table>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-string">"  hi  "</span>.strip()                  <span class="hljs-comment"># "hi"</span>
+<span class="hljs-string">"a,b,c"</span>.split(<span class="hljs-string">","</span>)                  <span class="hljs-comment"># ['a', 'b', 'c']</span>
+<span class="hljs-string">"-"</span>.join([<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>])             <span class="hljs-comment"># "a-b-c"</span>
+<span class="hljs-string">"2026"</span>.isdigit()                        <span class="hljs-comment"># True</span>
+<span class="hljs-string">"hello"</span>.startswith(<span class="hljs-string">"he"</span>)                  <span class="hljs-comment"># True</span></code></pre>
+
+      <h3>Formatting with f-strings</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes">name, age = <span class="hljs-string">"Bimal"</span>, <span class="hljs-number">53</span>
+
+<span class="hljs-string">f"<span class="hljs-subst">{name}</span> is <span class="hljs-subst">{age}</span> years old"</span>                <span class="hljs-comment"># "Bimal is 53 years old"</span>
+<span class="hljs-string">f"<span class="hljs-subst">{<span class="hljs-number">3.14159</span>:<span class="hljs-number">.2</span>f}</span>"</span>                               <span class="hljs-comment"># "3.14" — 2 decimal places</span>
+<span class="hljs-string">f"<span class="hljs-subst">{<span class="hljs-number">1000000</span>:,}</span>"</span>                                    <span class="hljs-comment"># "1,000,000" — thousands separator</span>
+<span class="hljs-string">f"<span class="hljs-subst">{<span class="hljs-number">0.256</span>:<span class="hljs-number">.1</span>%}</span>"</span>                                       <span class="hljs-comment"># "25.6%" — percentage</span>
+<span class="hljs-string">f"<span class="hljs-subst">{name:&gt;<span class="hljs-number">15</span>}</span>"</span>                                           <span class="hljs-comment"># right-align in a 15-char field</span>
+<span class="hljs-string">f"<span class="hljs-subst">{name:&lt;<span class="hljs-number">15</span>}</span>|"</span>                                            <span class="hljs-comment"># left-align</span>
+<span class="hljs-string">f"<span class="hljs-subst">{name!r}</span>"</span>                                                  <span class="hljs-comment"># repr() form — "'Bimal'" with quotes</span></code></pre>
+      <p>Older equivalents still appear in existing code:</p>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-string">"{} is {} years old"</span>.<span class="hljs-built_in">format</span>(name, age)   <span class="hljs-comment"># .format() method</span>
+<span class="hljs-string">"%s is %d years old"</span> % (name, age)          <span class="hljs-comment"># printf-style — legacy, avoid in new code</span></code></pre>
+
+      <h3>Escape sequences and raw strings</h3>
+      <table>
+        <tbody><tr><th>Sequence</th><th>Meaning</th></tr>
+        <tr><td><code>\n</code></td><td>Newline</td></tr>
+        <tr><td><code>\t</code></td><td>Tab</td></tr>
+        <tr><td><code>\\</code></td><td>Literal backslash</td></tr>
+        <tr><td><code>\"</code> / <code>\'</code></td><td>Literal quote character</td></tr>
+      </tbody></table>
+      <pre><code class="language-python hljs" data-highlighted="yes">path = <span class="hljs-string">r"C:\Users\Bimal\Downloads"</span>   <span class="hljs-comment"># raw string — backslashes are literal, not escapes</span>
+
+multi = <span class="hljs-string">"""First line
+Second line"""</span>                            <span class="hljs-comment"># triple-quoted string spans multiple lines</span></code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Write a function that counts the vowels in a given string, case-insensitive.</p>
+          <button class="problem-toggle" onclick="toggleSol('t6s1', this)">Show solution</button>
+          <div class="solution" id="t6s1"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">count_vowels</span>(<span class="hljs-params">s</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> s.lower() <span class="hljs-keyword">if</span> ch <span class="hljs-keyword">in</span> <span class="hljs-string">"aeiou"</span>)
+
+count_vowels(<span class="hljs-string">"Python Essentials"</span>)   <span class="hljs-comment"># 5</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Given a full name in the form <code>"First Last"</code>, reformat it as <code>"Last, First"</code> using string methods.</p>
+          <button class="problem-toggle" onclick="toggleSol('t6s2', this)">Show solution</button>
+          <div class="solution" id="t6s2"><pre><code class="language-python hljs" data-highlighted="yes">full_name = <span class="hljs-string">"Bimal Jayasundera"</span>
+first, last = full_name.split(<span class="hljs-string">" "</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{last}</span>, <span class="hljs-subst">{first}</span>"</span>)   <span class="hljs-comment"># Jayasundera, Bimal</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Write an f-string expression that formats <code>1234.5</code> as currency with a thousands separator and 2 decimal places: <code>"$1,234.50"</code>.</p>
+          <button class="problem-toggle" onclick="toggleSol('t6s3', this)">Show solution</button>
+          <div class="solution" id="t6s3"><pre><code class="language-python hljs" data-highlighted="yes">amount = <span class="hljs-number">1234.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"$<span class="hljs-subst">{amount:,<span class="hljs-number">.2</span>f}</span>"</span>)   <span class="hljs-comment"># $1,234.50</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(5)">← Collections</button><button onclick="go(7)">Next: File I/O →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="7" id="topic-7">
+      <span class="kicker">07 / 08</span>
+      <h2>Basic File I/O</h2>
+      <p class="intro">Python reads and writes files through file objects opened with <code>open()</code>. The <code>with</code> statement is the standard idiom — it guarantees the file is closed even if an error occurs mid-operation.</p>
+
+      <h3>File modes</h3>
+      <table>
+        <tbody><tr><th>Mode</th><th>Meaning</th></tr>
+        <tr><td><code>"r"</code></td><td>Read (default); errors if file doesn't exist</td></tr>
+        <tr><td><code>"w"</code></td><td>Write; creates file, <strong>overwrites</strong> if it exists</td></tr>
+        <tr><td><code>"a"</code></td><td>Append; creates file if missing, adds to the end</td></tr>
+        <tr><td><code>"x"</code></td><td>Exclusive create; errors if file already exists</td></tr>
+        <tr><td><code>"r+"</code></td><td>Read and write, file must exist</td></tr>
+        <tr><td><code>"rb"</code> / <code>"wb"</code></td><td>Binary variants — append <code>b</code> for non-text files</td></tr>
+      </tbody></table>
+
+      <h3>Writing</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"w"</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">"First line\n"</span>)
+    f.write(<span class="hljs-string">"Second line\n"</span>)
+
+lines = [<span class="hljs-string">"one\n"</span>, <span class="hljs-string">"two\n"</span>, <span class="hljs-string">"three\n"</span>]
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"w"</span>) <span class="hljs-keyword">as</span> f:
+    f.writelines(lines)          <span class="hljs-comment"># expects newlines already included</span></code></pre>
+
+      <h3>Reading</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+    content = f.read()          <span class="hljs-comment"># entire file as one string</span>
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+    first_line = f.readline()      <span class="hljs-comment"># one line, including \n</span>
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+    all_lines = f.readlines()         <span class="hljs-comment"># list of lines</span>
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:            <span class="hljs-comment"># memory-efficient — one line at a time</span>
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        <span class="hljs-built_in">print</span>(line.strip())</code></pre>
+
+      <h3>Appending</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"a"</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">"Third line\n"</span>)</code></pre>
+
+      <h3>Why <code>with</code> matters</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-comment"># without with — must remember to close, and close is skipped on error</span>
+f = <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>)
+content = f.read()
+f.close()
+
+<span class="hljs-comment"># with — file closes automatically, even if an exception is raised inside the block</span>
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+    content = f.read()
+<span class="hljs-comment"># f is guaranteed closed here</span></code></pre>
+
+      <h3>Handling a missing file</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"missing.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+        data = f.read()
+<span class="hljs-keyword">except</span> FileNotFoundError:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"File does not exist"</span>)</code></pre>
+      <p>This pattern connects directly to the next topic — exceptions are the standard way Python signals and handles I/O failures.</p>
+
+      <h3>Working with paths</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">import</span> os
+
+os.getcwd()                        <span class="hljs-comment"># current working directory</span>
+os.path.exists(<span class="hljs-string">"notes.txt"</span>)           <span class="hljs-comment"># True/False — check before opening</span>
+os.path.join(<span class="hljs-string">"data"</span>, <span class="hljs-string">"notes.txt"</span>)        <span class="hljs-comment"># "data/notes.txt" — builds paths portably across OSes</span>
+
+<span class="hljs-keyword">from</span> pathlib <span class="hljs-keyword">import</span> Path              <span class="hljs-comment"># modern alternative to os.path</span>
+p = Path(<span class="hljs-string">"data"</span>) / <span class="hljs-string">"notes.txt"</span>
+p.exists()
+p.read_text()                              <span class="hljs-comment"># reads whole file as a string, no "with" needed</span>
+p.write_text(<span class="hljs-string">"Hello\n"</span>)                       <span class="hljs-comment"># writes, creating the file if missing</span></code></pre>
+      <p>Relative paths (<code>"notes.txt"</code>) are resolved against the current working directory, which is wherever the script was launched from — not necessarily the script's own folder. This trips up beginners more than any other file-handling issue: a script that works when run from one folder can raise <code>FileNotFoundError</code> when run from another.</p>
+
+      <h3>Checking before you write</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(<span class="hljs-string">"output.txt"</span>):
+    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"output.txt"</span>, <span class="hljs-string">"w"</span>) <span class="hljs-keyword">as</span> f:
+        f.write(<span class="hljs-string">"First run\n"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"File already exists — not overwriting"</span>)</code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Write code that reads a file line by line and counts the total number of lines.</p>
+          <button class="problem-toggle" onclick="toggleSol('t7s1', this)">Show solution</button>
+          <div class="solution" id="t7s1"><pre><code class="language-python hljs" data-highlighted="yes">count = <span class="hljs-number">0</span>
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"notes.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+        count += <span class="hljs-number">1</span>
+<span class="hljs-built_in">print</span>(count)</code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Write code that writes a list of names to a file, one per line, using <code>.join()</code> before writing.</p>
+          <button class="problem-toggle" onclick="toggleSol('t7s2', this)">Show solution</button>
+          <div class="solution" id="t7s2"><pre><code class="language-python hljs" data-highlighted="yes">names = [<span class="hljs-string">"Bimal"</span>, <span class="hljs-string">"Nathaliya"</span>, <span class="hljs-string">"Hasthi"</span>]
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"names.txt"</span>, <span class="hljs-string">"w"</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">"\n"</span>.join(names))</code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Write code that safely reads a file, printing <code>"File not found"</code> if it doesn't exist, without crashing the program.</p>
+          <button class="problem-toggle" onclick="toggleSol('t7s3', this)">Show solution</button>
+          <div class="solution" id="t7s3"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">"data.txt"</span>, <span class="hljs-string">"r"</span>) <span class="hljs-keyword">as</span> f:
+        content = f.read()
+<span class="hljs-keyword">except</span> FileNotFoundError:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"File not found"</span>)
+    content = <span class="hljs-literal">None</span></code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(6)">← Strings</button><button onclick="go(8)">Next: Exceptions →</button></div>
+    </section>
+
+    <section class="topic-panel" data-idx="8" id="topic-8">
+      <span class="kicker">08 / 08</span>
+      <h2>An Introduction to Exceptions</h2>
+      <p class="intro">Exceptions are Python's mechanism for signaling and responding to errors at runtime, separating normal program logic from error-handling logic.</p>
+
+      <h3>try / except / else / finally</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">try</span>:
+    result = <span class="hljs-number">10</span> / <span class="hljs-number">0</span>
+<span class="hljs-keyword">except</span> ZeroDivisionError:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Cannot divide by zero"</span>)
+<span class="hljs-keyword">except</span> (TypeError, ValueError) <span class="hljs-keyword">as</span> e:     <span class="hljs-comment"># catch multiple types, capture the exception object</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"Error: <span class="hljs-subst">{e}</span>"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"No exception occurred"</span>)            <span class="hljs-comment"># runs only if try succeeded</span>
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Always runs"</span>)                          <span class="hljs-comment"># runs no matter what — success, failure, or return</span></code></pre>
+      <p><code>finally</code> is typically used for cleanup — closing a connection or file — that must happen regardless of outcome.</p>
+
+      <h3>Common built-in exceptions</h3>
+      <table>
+        <tbody><tr><th>Exception</th><th>Trigger</th></tr>
+        <tr><td><code>ZeroDivisionError</code></td><td>Division or modulo by zero</td></tr>
+        <tr><td><code>ValueError</code></td><td>Correct type, invalid value — <code>int("abc")</code></td></tr>
+        <tr><td><code>TypeError</code></td><td>Operation applied to an incompatible type</td></tr>
+        <tr><td><code>IndexError</code></td><td>Sequence index out of range</td></tr>
+        <tr><td><code>KeyError</code></td><td>Dictionary key not found</td></tr>
+        <tr><td><code>AttributeError</code></td><td>Attribute/method doesn't exist on the object</td></tr>
+        <tr><td><code>FileNotFoundError</code></td><td>File doesn't exist on <code>open()</code></td></tr>
+        <tr><td><code>NameError</code></td><td>Using a name that hasn't been defined</td></tr>
+      </tbody></table>
+
+      <h3>Exception hierarchy</h3>
+      <p>All built-in exceptions descend from <code>BaseException</code>. Catching <code>Exception</code> (not <code>BaseException</code>) is the usual practice — it excludes system-exit signals like <code>KeyboardInterrupt</code> that generally shouldn't be silently swallowed.</p>
+      <pre><code class="language-python hljs" data-highlighted="yes">BaseException
+ └── Exception
+      ├── ArithmeticError
+      │     └── ZeroDivisionError
+      ├── LookupError
+      │     ├── IndexError
+      │     └── KeyError
+      ├── ValueError
+      ├── TypeError
+      └── OSError
+            └── FileNotFoundError</code></pre>
+
+      <h3>Raising exceptions</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">set_age</span>(<span class="hljs-params">age</span>):
+    <span class="hljs-keyword">if</span> age &lt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Age cannot be negative"</span>)
+    <span class="hljs-keyword">return</span> age
+
+<span class="hljs-keyword">try</span>:
+    set_age(-<span class="hljs-number">5</span>)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(e)     <span class="hljs-comment"># "Age cannot be negative"</span></code></pre>
+
+      <h3>Custom exceptions</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">class</span> <span class="hljs-title class_">InsufficientFundsError</span>(<span class="hljs-title class_ inherited__">Exception</span>):
+    <span class="hljs-string">"""Raised when a withdrawal exceeds the available balance."""</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">withdraw</span>(<span class="hljs-params">balance, amount</span>):
+    <span class="hljs-keyword">if</span> amount &gt; balance:
+        <span class="hljs-keyword">raise</span> InsufficientFundsError(<span class="hljs-string">f"Cannot withdraw <span class="hljs-subst">{amount}</span>, balance is <span class="hljs-subst">{balance}</span>"</span>)
+    <span class="hljs-keyword">return</span> balance - amount
+
+<span class="hljs-keyword">try</span>:
+    withdraw(<span class="hljs-number">100</span>, <span class="hljs-number">150</span>)
+<span class="hljs-keyword">except</span> InsufficientFundsError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(e)</code></pre>
+
+      <h3><code>assert</code> for internal checks</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">average</span>(<span class="hljs-params">numbers</span>):
+    <span class="hljs-keyword">assert</span> <span class="hljs-built_in">len</span>(numbers) &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"List cannot be empty"</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(numbers) / <span class="hljs-built_in">len</span>(numbers)</code></pre>
+      <p><code>assert</code> raises <code>AssertionError</code> if the condition is false. It's intended for catching programmer errors during development — not for validating untrusted user input, since assertions can be globally disabled at runtime with the <code>-O</code> flag.</p>
+
+      <h3>Bare except and why to avoid it</h3>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">try</span>:
+    risky_operation()
+<span class="hljs-keyword">except</span>:                    <span class="hljs-comment"># catches literally everything, including KeyboardInterrupt</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Something went wrong"</span>)
+
+<span class="hljs-comment"># better — catch what you actually expect, and keep the rest visible</span>
+<span class="hljs-keyword">try</span>:
+    risky_operation()
+<span class="hljs-keyword">except</span> (ValueError, TypeError) <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"Something went wrong: <span class="hljs-subst">{e}</span>"</span>)</code></pre>
+      <p>A bare <code>except:</code> silences real bugs along with expected failures, making problems harder to find. PE1 flags this explicitly as something to avoid.</p>
+
+      <h3>Debugging and testing</h3>
+      <p>PE1 closes on the practical reality that untested code cannot be trusted. Two techniques it introduces at this level:</p>
+      <ul>
+        <li><strong>Print debugging</strong> — inserting temporary <code>print()</code> calls to inspect variable state at specific points while tracking down a bug.</li>
+        <li><strong>Unit testing</strong> — writing small, automated test functions that verify a piece of code behaves correctly, so regressions are caught automatically rather than by manual re-checking.</li>
+      </ul>
+      <pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f"DEBUG: a=<span class="hljs-subst">{a}</span>, b=<span class="hljs-subst">{b}</span>"</span>)   <span class="hljs-comment"># print debugging — removed once the bug is found</span>
+    <span class="hljs-keyword">return</span> a + b
+
+<span class="hljs-comment"># a minimal unit test, in the spirit of PE1's introduction to the concept</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">test_add</span>():
+    <span class="hljs-keyword">assert</span> add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) == <span class="hljs-number">5</span>
+    <span class="hljs-keyword">assert</span> add(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"All tests passed"</span>)</code></pre>
+
+      <div class="practice">
+        <span class="practice-label">PRACTICE</span>
+
+        <div class="problem">
+          <span class="problem-num">1</span>
+          <p class="problem-prompt">Write a function <code>safe_divide(a, b)</code> that returns the division result, or prints a message and returns <code>None</code> if <code>b</code> is zero.</p>
+          <button class="problem-toggle" onclick="toggleSol('t8s1', this)">Show solution</button>
+          <div class="solution" id="t8s1"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">def</span> <span class="hljs-title function_">safe_divide</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> a / b
+    <span class="hljs-keyword">except</span> ZeroDivisionError:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Cannot divide by zero"</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+safe_divide(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>)   <span class="hljs-comment"># 5.0</span>
+safe_divide(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>)   <span class="hljs-comment"># prints message, returns None</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">2</span>
+          <p class="problem-prompt">Define a custom exception <code>NegativeValueError</code>, and a function that raises it if given a negative number.</p>
+          <button class="problem-toggle" onclick="toggleSol('t8s2', this)">Show solution</button>
+          <div class="solution" id="t8s2"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">class</span> <span class="hljs-title class_">NegativeValueError</span>(<span class="hljs-title class_ inherited__">Exception</span>):
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">square_root_check</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">raise</span> NegativeValueError(<span class="hljs-string">f"<span class="hljs-subst">{n}</span> is negative"</span>)
+    <span class="hljs-keyword">return</span> n ** <span class="hljs-number">0.5</span>
+
+<span class="hljs-keyword">try</span>:
+    square_root_check(-<span class="hljs-number">9</span>)
+<span class="hljs-keyword">except</span> NegativeValueError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(e)   <span class="hljs-comment"># -9 is negative</span></code></pre></div>
+        </div>
+
+        <div class="problem">
+          <span class="problem-num">3</span>
+          <p class="problem-prompt">Write a try/except/else/finally block that reads a number from input, doubles it, and always prints <code>"Done"</code> at the end regardless of success or failure.</p>
+          <button class="problem-toggle" onclick="toggleSol('t8s3', this)">Show solution</button>
+          <div class="solution" id="t8s3"><pre><code class="language-python hljs" data-highlighted="yes"><span class="hljs-keyword">try</span>:
+    n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">"Enter a number: "</span>))
+<span class="hljs-keyword">except</span> ValueError:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"That wasn't a valid number"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(n * <span class="hljs-number">2</span>)
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Done"</span>)</code></pre></div>
+        </div>
+      </div>
+
+      <div class="topic-footer"><button onclick="go(7)">← File I/O</button><span></span></div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const topics = [
+    "Variables & Data Types",
+    "Conditionals",
+    "Loops",
+    "Functions",
+    "Collections",
+    "Strings",
+    "File I/O",
+    "Exceptions"
+  ];
+
+  const nav = document.getElementById('nav');
+  topics.forEach((t, i) => {
+    const idx = i + 1;
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn' + (idx === 1 ? ' active' : '');
+    btn.id = 'nav-' + idx;
+    btn.innerHTML = `<span class="num">${String(idx).padStart(2,'0')}</span><span>${t}</span>`;
+    btn.onclick = () => go(idx);
+    nav.appendChild(btn);
+  });
+
+  function go(idx) {
+    document.querySelectorAll('.topic-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('topic-' + idx).classList.add('active');
+    document.getElementById('nav-' + idx).classList.add('active');
+    document.getElementById('main').scrollTo({top:0, behavior:'instant'});
+    try { localStorage.setItem('pe1-topic', idx); } catch(e) {}
+  }
+
+  // restore last-viewed topic (per-viewer convenience, non-critical if it fails)
+  try {
+    const saved = localStorage.getItem('pe1-topic');
+    if (saved) go(parseInt(saved));
+    else go(1);
+  } catch(e) { go(1); }
+
+  // theme toggle: System -> Light -> Dark -> System
+  const themeBtn = document.getElementById('themeBtn');
+  const modes = ['system', 'light', 'dark'];
+  let modeLabel = {system: 'System', light: 'Light', dark: 'Dark'};
+  function applyTheme(mode) {
+    if (mode === 'system') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', mode);
+    themeBtn.textContent = modeLabel[mode];
+    try { localStorage.setItem('pe1-theme', mode); } catch(e) {}
+  }
+  let currentMode = 'system';
+  try { currentMode = localStorage.getItem('pe1-theme') || 'system'; } catch(e) {}
+  applyTheme(currentMode);
+  themeBtn.onclick = () => {
+    currentMode = modes[(modes.indexOf(currentMode) + 1) % modes.length];
+    applyTheme(currentMode);
+  };
+
+  if (window.hljs) { hljs.highlightAll(); }
+
+  function toggleSol(id, btn) {
+    const el = document.getElementById(id);
+    const opening = !el.classList.contains('open');
+    el.classList.toggle('open');
+    btn.textContent = opening ? 'Hide solution' : 'Show solution';
+    if (opening && window.hljs) {
+      el.querySelectorAll('pre code').forEach(block => {
+        if (!block.dataset.highlighted) hljs.highlightElement(block);
+      });
+    }
+  }
+
+  // Download-a-copy button
+  const downloadBtn = document.getElementById('downloadBtn');
+  downloadBtn.onclick = async () => {
+    try {
+      const downloads = await claude.use('downloads');
+      if (!downloads) {
+        downloadBtn.textContent = 'Unavailable';
+        setTimeout(() => downloadBtn.textContent = 'Download', 2000);
+        return;
+      }
+      const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const result = await downloads.save({ filename: 'python-essentials-full.html', data: html });
+      if (result) {
+        downloadBtn.textContent = 'Saved';
+        setTimeout(() => downloadBtn.textContent = 'Download', 2000);
+      }
+    } catch (e) {
+      downloadBtn.textContent = 'Failed';
+      setTimeout(() => downloadBtn.textContent = 'Download', 2000);
+    }
+  };
+</script>
+
+
+</body></html>
