@@ -1,0 +1,1 @@
+COMMIT-SCHEME: week-<weeknumber>-<weekday>
