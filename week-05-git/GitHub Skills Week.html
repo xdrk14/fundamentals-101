@@ -1,0 +1,1189 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>GitHub Skills Week</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sticky course rail on the left, long-form lesson column on the right; each course is a numbered "commit" in a vertical history line. */
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --ink:#18201b; --muted:#5b665e; --line:#d9ded6;
+  --accent:#1f7a4a; --accent-soft:#e3f1e8; --add:#1a7f37; --add-bg:#e6f6ea; --del:#b42318; --del-bg:#fdecea;
+  --warn:#8a5a00; --warn-bg:#fdf3dc; --code-bg:#f0f2ee; --code-ink:#1f2a22;
+  --tip:#1f5fa8; --tip-bg:#e6effa; --act-bg:#fbf8ef; --act-line:#c9a64a; --act-ink:#7a5a10;
+  --term:#2b2f6b; --pre-bg:#1e2430; --pre-ink:#e3e8f0;
+  --c1:#1f7a4a; --c1s:#e3f1e8; --c2:#b5481f; --c2s:#fbe9e1; --c3:#6b3fa0; --c3s:#efe7f8; --c4:#b0254a; --c4s:#fbe4ea; --c5:#1f6fa8; --c5s:#e3eff9; --c6:#4f5b53; --c6s:#eceee9;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111613; --surface:#18201b; --ink:#e7ece6; --muted:#9aa69d; --line:#2c3630;
+  --accent:#5fcf8f; --accent-soft:#1d3326; --add:#5fcf8f; --add-bg:#16301f; --del:#ff8a7a; --del-bg:#3a1c18;
+  --warn:#f2c46b; --warn-bg:#352a12; --code-bg:#0c100e; --code-ink:#d6e2d8;
+  --tip:#8ab8f0; --tip-bg:#16243a; --act-bg:#211e14; --act-line:#c9a64a; --act-ink:#e8c770;
+  --term:#c3c8ff; --pre-bg:#0a0d12; --pre-ink:#e3e8f0;
+  --c1:#5fcf8f; --c1s:#1d3326; --c2:#f0905f; --c2s:#3a2219; --c3:#b996ec; --c3s:#2a2038; --c4:#f07a98; --c4s:#3a1b24; --c5:#7ab8ec; --c5s:#172a3c; --c6:#a8b3ab; --c6s:#232a26; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#111613; --surface:#18201b; --ink:#e7ece6; --muted:#9aa69d; --line:#2c3630;
+  --accent:#5fcf8f; --accent-soft:#1d3326; --add:#5fcf8f; --add-bg:#16301f; --del:#ff8a7a; --del-bg:#3a1c18;
+  --warn:#f2c46b; --warn-bg:#352a12; --code-bg:#0c100e; --code-ink:#d6e2d8;
+  --tip:#8ab8f0; --tip-bg:#16243a; --act-bg:#211e14; --act-line:#c9a64a; --act-ink:#e8c770;
+  --term:#c3c8ff; --pre-bg:#0a0d12; --pre-ink:#e3e8f0;
+  --c1:#5fcf8f; --c1s:#1d3326; --c2:#f0905f; --c2s:#3a2219; --c3:#b996ec; --c3s:#2a2038; --c4:#f07a98; --c4s:#3a1b24; --c5:#7ab8ec; --c5s:#172a3c; --c6:#a8b3ab; --c6s:#232a26; color-scheme:dark }
+/* each course carries its own accent so sections are distinguishable at a glance */
+#c1{--accent:var(--c1);--accent-soft:var(--c1s)} #c2{--accent:var(--c2);--accent-soft:var(--c2s)}
+#c3{--accent:var(--c3);--accent-soft:var(--c3s)} #c4{--accent:var(--c4);--accent-soft:var(--c4s)}
+#c5{--accent:var(--c5);--accent-soft:var(--c5s)} #cheat,#gloss{--accent:var(--c6);--accent-soft:var(--c6s)}
+.rail li:nth-child(1){--accent:var(--c1)} .rail li:nth-child(2){--accent:var(--c2)} .rail li:nth-child(3){--accent:var(--c3)} .rail li:nth-child(4){--accent:var(--c4)} .rail li:nth-child(5){--accent:var(--c5)}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--f-body);padding-inline:16px;padding-block:0 64px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+/* rail */
+nav.rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-block:32px;max-height:100vh;overflow:auto}
+@media (max-width:860px){nav.rail{position:static;max-height:none;padding-block:24px 8px}}
+.rail h2{font:700 13px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.rail ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.rail li a{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;padding:8px 0 8px 14px;margin-left:-2px;border-left:2px solid transparent;text-decoration:none;color:var(--ink)}
+.rail li a:hover{border-left-color:var(--accent)}
+.rail .hash{font:600 12px/1.5 var(--f-mono);color:var(--accent)}
+.rail .nm{font-size:14px;line-height:1.35}
+.rail .pg{grid-column:2;font:12px var(--f-mono);color:var(--muted)}
+.rail .tools{margin-top:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+/* hero */
+header.hero{padding-block:40px 24px;border-bottom:1px solid var(--line)}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font:800 clamp(2.2rem,5vw,3.6rem)/1.02 var(--f-display);letter-spacing:-.02em;margin:.4em 0 .3em;text-wrap:balance}
+.lede{max-width:62ch;color:var(--muted);font-size:1.08rem;margin:0}
+.meter{margin-top:20px;display:flex;align-items:center;gap:12px;font:13px var(--f-mono);color:var(--muted)}
+.bar{flex:1;max-width:320px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.order{margin-top:24px;overflow-x:auto}
+.order table{border-collapse:collapse;min-width:560px;width:100%;font-size:14px}
+.order th,.order td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}
+.order th{font:600 12px var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.order td:first-child{font:600 13px var(--f-mono);color:var(--accent)}
+/* course */
+section.course{padding-block:48px 8px;border-bottom:1px solid var(--line)}
+.course h2{font:800 clamp(1.8rem,3.6vw,2.6rem)/1.08 var(--f-display);letter-spacing:-.015em;margin:.3em 0 .2em;text-wrap:balance}
+.tag{font-style:italic;color:var(--muted);margin:0 0 20px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:24px}
+.facts div{background:var(--surface);padding:12px 14px;min-width:0}
+.facts b{display:block;font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.facts span{font-size:14px}
+h3{font:700 1.35rem/1.25 var(--f-display);margin:36px 0 8px;text-wrap:balance}
+h4{font:600 1rem/1.3 var(--f-body);margin:24px 0 6px}
+p,li{max-width:70ch}
+.step{position:relative;padding-left:56px;margin-top:40px}
+.step::before{content:"";position:absolute;left:17px;top:44px;bottom:-40px;width:2px;background:var(--line)}
+.step:last-of-type::before{display:none}
+.stepno{position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);background:var(--surface);display:grid;place-items:center;font:700 14px var(--f-mono);color:var(--accent)}
+.step.done .stepno{background:var(--accent);color:var(--surface)}
+.step h3{margin-top:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
+.step h3 label{font:500 13px var(--f-body);color:var(--muted);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+@media (max-width:520px){.step{padding-left:0}.stepno{position:static;margin-bottom:8px}.step::before{display:none}}
+/* course header band in the course colour */
+section.course > .eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:6px 10px;border-radius:4px}
+.course > h2{color:var(--accent)}
+/* KEY CONCEPTS: white card, indigo terms, labelled */
+.concept{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:30px 18px 14px;margin:16px 0;position:relative}
+.concept::before{content:"Key concepts";position:absolute;top:10px;left:18px;font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.concept dt{font:700 15.5px var(--f-body);color:var(--term)}
+.concept dd{margin:2px 0 14px;padding-left:12px;border-left:2px solid var(--line)}
+.concept dd:last-child{margin-bottom:0}
+/* ACTIVITY: warm tinted panel = "do this now" */
+.activity{background:var(--act-bg);border:1px solid var(--line);border-left:4px solid var(--act-line);border-radius:0 8px 8px 0;margin-top:20px;padding:4px 18px 12px}
+.activity h4{color:var(--act-ink)}
+.activity h4::before{content:"▶ Do it: ";font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+ol.do{padding-left:1.4em}
+ol.do li{margin:8px 0}
+ol.do li::marker{color:var(--accent);font-weight:700;font-family:var(--f-mono)}
+/* code: dark terminal blocks, distinct from prose */
+pre{background:var(--pre-bg);color:var(--pre-ink);font:13.5px/1.6 var(--f-mono);padding:12px 14px;border-radius:6px;overflow-x:auto;margin:10px 0}
+code{font:0.88em var(--f-mono);background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:4px}
+pre code{background:none;color:inherit;padding:0;font-size:inherit}
+.diff{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.diff .a{display:block;background:var(--add-bg);color:var(--add)}
+.diff .d{display:block;background:var(--del-bg);color:var(--del)}
+.diff .m{display:block;background:var(--warn-bg);color:var(--warn)}
+/* notes: tip = blue, warning = amber */
+.note{border-left:4px solid var(--tip);background:var(--tip-bg);padding:10px 14px;margin:14px 0;border-radius:0 6px 6px 0;font-size:15px}
+.note b:first-child{color:var(--tip)}
+.note.warn{border-left-color:var(--warn);background:var(--warn-bg)}
+.note.warn b:first-child{color:var(--warn)}
+.tbl th{color:var(--accent)}
+.step h3{color:var(--ink)}
+.tag{border-left:3px solid var(--accent);padding-left:12px}
+.note b:first-child{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+details.trouble{margin:14px 0;font-size:15px;border:1px solid var(--line);border-radius:6px;padding:8px 14px;background:var(--surface)}
+details.trouble summary{cursor:pointer;font-weight:600;color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0}
+.tbl table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.tbl th{background:var(--code-bg);font-weight:600}
+.tbl td code{white-space:nowrap}
+.mermaid{background:var(--surface)!important;color:var(--ink)}
+.review{background:var(--accent-soft);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-top:40px}
+.review h3{color:var(--accent)}
+.quiz h3::before{content:"? ";color:var(--accent);font-family:var(--f-mono)}
+.q{border-top:3px solid var(--accent)}
+.review h3{margin-top:0}
+/* render demo */
+.render{border:1px solid var(--line);border-radius:6px;padding:10px 14px;background:var(--surface);margin:8px 0}
+.render .h1{font:700 1.6rem var(--f-body)} .render .h2{font:700 1.3rem var(--f-body);border-bottom:1px solid var(--line)} .render .h6{font:600 .85rem var(--f-body);color:var(--muted)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
+@media (max-width:620px){.pair{grid-template-columns:minmax(0,1fr)}}
+.pair > *{min-width:0}
+/* quiz */
+.quiz{margin-top:24px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.q p{margin:0 0 8px;font-weight:600}
+.q button{display:block;width:100%;text-align:left;font:inherit;font-size:15px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:6px 0;cursor:pointer}
+.q button:hover{border-color:var(--accent)}
+.q button.ok{background:var(--add-bg);border-color:var(--add);color:var(--add)}
+.q button.no{background:var(--del-bg);border-color:var(--del);color:var(--del)}
+.q .why{font-size:14px;color:var(--muted);margin-top:6px}
+footer{padding-block:32px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<nav class="rail" aria-label="Courses">
+  <h2>This week's history</h2>
+  <ol>
+    <li><a href="#c1"><span class="hash">a1</span><span class="nm">Introduction to GitHub</span><span class="pg" data-pg="c1">0/4</span></a></li>
+    <li><a href="#c2"><span class="hash">b2</span><span class="nm">Introduction to Git</span><span class="pg" data-pg="c2">0/6</span></a></li>
+    <li><a href="#c3"><span class="hash">c3</span><span class="nm">Communicate using Markdown</span><span class="pg" data-pg="c3">0/5</span></a></li>
+    <li><a href="#c4"><span class="hash">d4</span><span class="nm">Resolve Merge Conflicts</span><span class="pg" data-pg="c4">0/3</span></a></li>
+    <li><a href="#c5"><span class="hash">e5</span><span class="nm">Review Pull Requests</span><span class="pg" data-pg="c5">0/5</span></a></li>
+  </ol>
+  <div class="tools">
+    <a href="#cheat">Command cheat sheet</a>
+    <a href="#gloss">Glossary</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">GitHub Skills · Week of 5 October 2026</div>
+  <h1>Five courses, one workflow: branch, commit, propose, review, merge.</h1>
+  <p class="lede">Every step, concept, command, note and troubleshooting tip from your five GitHub Skills exercises, taken from the official <code>skills/*</code> course repositories. Tick each step as you finish it; the check-quizzes at the end of each course test the ideas, not just the clicks.</p>
+  <div class="meter"><div class="bar"><i id="barfill"></i></div><span id="bartext">0 of 23 steps</span></div>
+  <div class="order">
+    <table>
+      <thead><tr><th>#</th><th>Course</th><th>Your repo</th><th>Steps</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Introduction to GitHub</td><td><a href="https://github.com/xdrk14/skills-introduction-to-github/issues/1">skills-introduction-to-github</a></td><td>4</td><td>&lt; 1 hr</td></tr>
+        <tr><td>2</td><td>Introduction to Git</td><td><a href="https://github.com/xdrk14/skills-introduction-to-git/issues/1">skills-introduction-to-git</a></td><td>6</td><td>&lt; 60 min</td></tr>
+        <tr><td>3</td><td>Communicate using Markdown</td><td><a href="https://github.com/xdrk14/skills-communicate-using-markdown/issues/1">skills-communicate-using-markdown</a></td><td>5</td><td>&lt; 1 hr</td></tr>
+        <tr><td>4</td><td>Resolve Merge Conflicts</td><td><a href="https://github.com/xdrk14/skills-resolve-merge-conflicts/issues/1">skills-resolve-merge-conflicts</a></td><td>3</td><td>&lt; 30 min</td></tr>
+        <tr><td>5</td><td>Review Pull Requests</td><td><a href="https://github.com/xdrk14/skills-review-pull-requests/issues/1">skills-review-pull-requests</a></td><td>5</td><td>&lt; 30 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>How every exercise works</b>Each exercise is a copy of a template repository. About 20 seconds after you copy it, a GitHub Actions workflow opens <strong>Issue #1</strong>. "Mona" (the Octocat bot) posts each lesson there as a comment, watches your repository for the change the step asks for, and posts the next lesson when it detects it. If nothing appears, refresh the page and check the <strong>Actions</strong> tab: a running job may simply be slow; a failed job is a bug to report. A <strong>public</strong> repository is recommended because private repositories consume Actions minutes.</div>
+</header>
+
+<!-- ============ COURSE 1 ============ -->
+<section class="course" id="c1">
+  <div class="eyebrow">Course 1 · skills/introduction-to-github</div>
+  <h2>Introduction to GitHub</h2>
+  <p class="tag">Get started using GitHub in less than an hour.</p>
+  <div class="facts">
+    <div><b>Who it is for</b><span>New developers, new GitHub users, students</span></div>
+    <div><b>You learn</b><span>Repositories, branches, commits, pull requests</span></div>
+    <div><b>You build</b><span>A short Markdown file usable as your profile README</span></div>
+    <div><b>Prerequisites</b><span>None</span></div>
+  </div>
+
+  <div class="step" data-step="c1-1">
+    <div class="stepno">1</div>
+    <h3>Create a branch <label><input type="checkbox" id="c1-1"> done</label></h3>
+    <dl class="concept">
+      <dt>GitHub</dt><dd>A collaboration platform that uses <strong>Git</strong> for versioning. A popular place to share and contribute to open-source software. (Course video: <a href="https://www.youtube.com/watch?v=pBy1zgt0XPc">What is GitHub?</a>)</dd>
+      <dt>Repository</dt><dd>A project containing files and folders. A repository tracks versions of those files and folders.</dd>
+      <dt>Branch</dt><dd>A parallel version of your repository. By default a repository has one branch, <code>main</code>, which is the definitive branch. Creating another branch copies <code>main</code> so you can change things safely without disrupting the main project. People commonly use branches to work on a specific feature without affecting the rest. Branches keep everyone's work safe while you contribute.</dd>
+      <dt>Profile README</dt><dd>An "About me" section shown at the top of your GitHub profile page, where you share information about yourself with the community.</dd>
+    </dl>
+    <div class="activity"><h4>Your first branch</h4>
+    <ol class="do">
+      <li>Open your copy of the exercise in a second browser tab; work there while reading here.</li>
+      <li>Go to the <strong>&lt; &gt; Code</strong> tab.</li>
+      <li>Click the <strong>main</strong> branch drop-down.</li>
+      <li>In <strong>Find or create a branch…</strong>, type <code>my-first-branch</code> (the exact name is checked).</li>
+      <li>Click <strong>Create branch: <code>my-first-branch</code> from main</strong>. GitHub switches to the new branch automatically and the drop-down now shows its name.</li>
+      <li>Wait for Mona's comment with the next lesson.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Make sure the branch name is exactly <code>my-first-branch</code>: no prefixes or suffixes.</details>
+  </div>
+
+  <div class="step" data-step="c1-2">
+    <div class="stepno">2</div>
+    <h3>Commit a file <label><input type="checkbox" id="c1-2"> done</label></h3>
+    <dl class="concept">
+      <dt>Commit</dt><dd>A set of changes to the files and folders in your project. A commit exists <em>in a branch</em>. It records changes such as adding, removing or renaming files and modifying file content.</dd>
+      <dt>Commit message</dt><dd>A short summary of the change, with an optional <strong>extended description</strong>. Both give clarity, which matters most when a commit touches several files.</dd>
+      <dt><code>.md</code></dt><dd>The file extension for a Markdown file (covered fully in Course 3).</dd>
+    </dl>
+    <div class="activity"><h4>Your first commit</h4>
+    <ol class="do">
+      <li>On the <strong>Code</strong> tab, confirm you are on <code>my-first-branch</code>.</li>
+      <li><strong>Add file</strong> → <strong>Create new file</strong>.</li>
+      <li>Name the file <code>PROFILE.md</code>.</li>
+      <li>Enter this content:<pre><code>Welcome to my GitHub profile!</code></pre></li>
+      <li>Click <strong>Commit changes…</strong> (top right). A dialog opens.</li>
+      <li>Replace GitHub's suggested message with <code>Add PROFILE.md</code>.</li>
+      <li>Ignore the other fields and click <strong>Commit changes</strong>.</li>
+      <li>Wait for Mona.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Check you are on <code>my-first-branch</code>, and that <code>PROFILE.md</code> is in the root folder (not inside any folder).</details>
+  </div>
+
+  <div class="step" data-step="c1-3">
+    <div class="stepno">3</div>
+    <h3>Open a pull request <label><input type="checkbox" id="c1-3"> done</label></h3>
+    <dl class="concept">
+      <dt>Pull request (PR)</dt><dd>Where collaboration happens. A PR shows the changes on your branch to other people and lets them accept, reject, or suggest further changes. In a side-by-side comparison it proposes applying your branch's changes to the <code>main</code> branch.</dd>
+      <dt>base vs compare</dt><dd><strong>base</strong> is the branch you want to merge <em>into</em> (<code>main</code>); <strong>compare</strong> is the branch holding your changes (<code>my-first-branch</code>).</dd>
+    </dl>
+    <div class="activity"><h4>Create a pull request</h4>
+    <p>After committing you may see a banner with a <strong>Compare &amp; pull request</strong> button. Clicking it skips to item 5. To practise the manual route, use items 1–4.</p>
+    <ol class="do">
+      <li>Open the <strong>Pull requests</strong> tab.</li>
+      <li>Click <strong>New pull request</strong>.</li>
+      <li>Select <strong>base:</strong> <code>main</code> and <strong>compare:</strong> <code>my-first-branch</code>.</li>
+      <li>Click <strong>Create pull request</strong>.</li>
+      <li>Set the title to <code>Add my first file</code> (by default it is your commit message).</li>
+      <li>Write a short description: you created a branch, created a file, and made a commit.</li>
+      <li>Click <strong>Create pull request</strong>.</li>
+      <li>Wait for Mona.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Check the PR title is correct and that the PR has a description.</details>
+  </div>
+
+  <div class="step" data-step="c1-4">
+    <div class="stepno">4</div>
+    <h3>Merge your pull request <label><input type="checkbox" id="c1-4"> done</label></h3>
+    <dl class="concept">
+      <dt>Merge</dt><dd>Adds the changes in your pull request and branch into the <code>main</code> branch. A merge is itself a kind of commit, which is why its dialog looks like the commit dialog.</dd>
+    </dl>
+    <div class="activity"><h4>Merge the pull request</h4>
+    <ol class="do">
+      <li>Click <strong>Merge pull request</strong>. If workflows are still running the button may be inactive; wait for them to finish.</li>
+      <li>Click <strong>Confirm merge</strong>.</li>
+      <li>Click <strong>Delete branch</strong>: once merged, the branch is no longer needed.</li>
+      <li>Mona posts the final review.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>If earlier lessons have not passed, the merge button stays grey. Complete them first.</details>
+  </div>
+
+  <div class="review">
+    <h3>Course 1 review and next steps</h3>
+    <p>You learned about GitHub, repositories, branches, commits and pull requests; you created a branch, a commit and a PR; you merged a PR; you made your first contribution.</p>
+    <h4>Make your real profile README</h4>
+    <ol class="do">
+      <li>Create a new <strong>public</strong> repository whose name matches your GitHub username exactly (for you: <code>xdrk14</code>).</li>
+      <li>Create <code>README.md</code> in its root.</li>
+      <li>Edit its contents.</li>
+      <li>If you used a branch, open and merge a PR for it.</li>
+    </ol>
+    <p>Further: <a href="https://education.github.com/pack">Student Developer Pack</a> · <a href="https://docs.github.com/en/get-started">GitHub Getting Started docs</a> · <a href="https://github.com/explore">GitHub Explore</a> (projects to contribute to).</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <h3>Check yourself</h3>
+    <div class="q" data-a="1"><p>In a pull request from <code>my-first-branch</code> into <code>main</code>, which is the base?</p><button>my-first-branch</button><button>main</button><div class="why" hidden>The base is the destination branch that receives the changes.</div></div>
+    <div class="q" data-a="0"><p>Where does a commit live?</p><button>In a branch</button><button>In a pull request</button><button>In an issue</button><div class="why" hidden>A commit exists in a branch; a PR only proposes moving commits between branches.</div></div>
+    <div class="q" data-a="2"><p>Why delete the branch after merging?</p><button>To undo the merge</button><button>Because GitHub requires it</button><button>Its work is now in main, so the branch is no longer needed</button><div class="why" hidden>The changes are already in main; deleting the branch keeps the repository tidy.</div></div>
+  </div>
+</section>
+
+<!-- ============ COURSE 2 ============ -->
+<section class="course" id="c2">
+  <div class="eyebrow">Course 2 · skills/introduction-to-git</div>
+  <h2>Introduction to Git</h2>
+  <p class="tag">Use Git version control to work on a game using the command line (CLI) and VS Code.</p>
+  <div class="facts">
+    <div><b>Who it is for</b><span>Beginners learning Git version control</span></div>
+    <div><b>You learn</b><span>Commits, branches, history, collaboration basics</span></div>
+    <div><b>You build</b><span>A Git repository for the game <em>Stack Overflown</em>, plus small features</span></div>
+    <div><b>Recommended</b><span>Basic CLI and VS Code familiarity</span></div>
+  </div>
+
+  <div class="step" data-step="c2-1">
+    <div class="stepno">1</div>
+    <h3>Introduction to Git version control <label><input type="checkbox" id="c2-1"> done</label></h3>
+    <p>Scenario: backups have become hard to organise and everyone shares updates differently. Git replaces file-naming conventions, shared drives and emailed copies.</p>
+    <h4>What version control solves</h4>
+    <p>Backup and recovery · sandboxed experimentation · parallel development · locked files · file duplication · conflicting changes · team collaboration. Familiar symptoms:</p>
+    <pre><code>my-project-final-v2-really3.zip
+"When did that stop working? I didn't change anything!"
+"The file is locked. I'll work on a copy until he gets back on Monday."
+"Which email had v2 in it? I think the one from last Wednesday."</code></pre>
+    <dl class="concept">
+      <dt>Distributed version control</dt><dd>Each developer has a <strong>complete copy</strong> of the project history, unlike centralised systems with one shared copy. Advantages: work offline (most operations are local); robustness (every copy is a backup); flexible workflows (each developer chooses processes and tools).</dd>
+      <dt>Where Git is used</dt><dd><strong>CLI</strong>: the original tool and source of all functionality. <strong>Code editors</strong>: VS Code, JetBrains IDEs, Xcode, Emacs/Vim. <strong>Hosting services</strong>: GitHub, GitLab, Gitea, Azure DevOps, AWS CodeCommit, Bitbucket. <strong>Desktop apps</strong>: GitHub Desktop, Sourcetree, TortoiseGit, GitKraken, GitButler, and more at <a href="https://git-scm.com/tools/guis">git-scm.com/tools/guis</a>.</dd>
+    </dl>
+    <div class="note"><b>Important</b>The exercise runs on a machine with Git pre-installed. To install it yourself, use the guides at <a href="https://git-scm.com">git-scm.com</a>.</div>
+    <div class="activity"><h4>Open the sample project</h4>
+    <ol class="do">
+      <li>Open the <strong>Create Codespace</strong> page from the badge in the issue, in a new tab, with default configuration. (This Codespace is deliberately set up so you start from scratch.)</li>
+      <li>Confirm the <strong>Repository</strong> field is your copy (<code>xdrk14/skills-introduction-to-git</code>), not <code>skills/introduction-to-git</code>, then click <strong>Create Codespace</strong>.</li>
+      <li>Wait for VS Code to load in the browser.</li>
+      <li>In <strong>File Explorer</strong>, right-click <code>src/index.html</code> → <strong>Show Preview</strong> to play the game. <strong>Do not change anything yet</strong>: there is no version control.</li>
+    </ol></div>
+    <div class="activity"><h4>Git in the CLI</h4>
+    <ol class="do">
+      <li>Open the terminal if needed: <code>Ctrl+Shift+P</code> → <strong>View: Toggle Terminal</strong>.</li>
+      <li>Check Git is installed:<pre><code>git --version</code></pre></li>
+      <li>Show the help documentation:<pre><code>git --help</code></pre></li>
+    </ol></div>
+    <div class="activity"><h4>Set your Git identity</h4>
+    <div class="note warn"><b>Warning</b>Your author name and email are stored in history and visible to anyone with access to the repository. GitHub offers an optional <strong>noreply</strong> email address in your <a href="https://github.com/settings/emails">email settings</a>.</div>
+    <ol class="do">
+      <li>Set your display name (replace the placeholder):<pre><code>git config --global user.name "First Last"</code></pre></li>
+      <li>Set your email (consider your noreply address):<pre><code>git config --global user.email "me@example.com"</code></pre></li>
+      <li>Confirm:<pre><code>git config --global --list</code></pre></li>
+    </ol>
+    <div class="note"><b>Tip</b>For a different identity per project, run the same commands inside an existing repository with <code>--local</code> instead of <code>--global</code>.</div></div>
+    <details class="trouble"><summary>Having trouble?</summary>Make sure you replaced "First Last" and "me@example.com" with your real details.</details>
+  </div>
+
+  <div class="step" data-step="c2-2">
+    <div class="stepno">2</div>
+    <h3>Creating your first repository <label><input type="checkbox" id="c2-2"> done</label></h3>
+    <dl class="concept">
+      <dt>Working directory</dt><dd>Your project files, where you make changes.</dd>
+      <dt>Staging area (index)</dt><dd>A preparation area where you group the changes you want to save to history. Staged content is a locked copy.</dd>
+      <dt>Repository</dt><dd>The permanent record of your project's development history.</dd>
+    </dl>
+<pre class="mermaid">graph LR
+  A[Working Directory] -->|git add| B[Staging Area]
+  B -->|git commit| C[Repository]
+  C -->|git checkout| A</pre>
+    <div class="tbl"><table>
+      <tr><th>Command</th><th>Purpose</th></tr>
+      <tr><td><code>git init</code></td><td>Start a new repository to enable versioning</td></tr>
+      <tr><td><code>git add</code></td><td>Group related changes in the staging area, ready to commit</td></tr>
+      <tr><td><code>git commit</code></td><td>Save the staged changes to history, with a commit message (a short description)</td></tr>
+      <tr><td><code>git status</code></td><td>Show the state of the working directory and staging area</td></tr>
+      <tr><td><code>git checkout</code></td><td>Change the working directory to a different version from history</td></tr>
+    </table></div>
+    <div class="note"><b>Tip</b>Do not undervalue the commit message. Clear, concise, descriptive, non-generic messages make history readable and help locate future bugs.</div>
+    <div class="activity"><h4>Initialise a project repository (CLI)</h4>
+    <ol class="do">
+      <li><pre><code>cd /workspaces/stack-overflown</code></pre></li>
+      <li><pre><code>git init</code></pre></li>
+      <li><code>git status</code>: note "No commits yet" and the hint to use <code>git add</code>.</li>
+      <li>Stage the game files, one by one or with a wildcard:<pre><code>git add src/index.html
+git add src/index.js
+git add src/patterns.js
+git add src/style.css
+# or
+git add src/*</code></pre></li>
+      <li><code>git status</code> again: each file shows as <code>new file</code>.</li>
+      <li><pre><code>git commit -m "Initial commit"</code></pre></li>
+      <li><code>git status</code>: "working tree clean" means your copy exactly matches history.</li>
+    </ol></div>
+    <div class="activity"><h4>Work on a file (VS Code)</h4>
+    <ol class="do">
+      <li>In File Explorer click <strong>New File…</strong> and create <code>README.md</code> inside <code>./stack-overflown/</code>.</li>
+      <li>Insert:<pre><code># Stack Overflown
+
+Organize the falling blocks into the current debug pattern before the stack overflows! ⏳</code></pre></li>
+      <li>Open the <strong>Source Control</strong> tab; <code>README.md</code> is listed under <strong>Changes</strong>.</li>
+      <li>Hover the file and click <strong>+</strong> to stage it.</li>
+      <li>Enter the message <code>Start game documentation</code> and click <strong>Commit</strong>.</li>
+      <li>Append to <code>README.md</code>:<pre><code>## How to Develop
+
+- `index.html` - the game container for playing
+- `index.js` - the primary game logic
+- `patterns.js` - the error patterns to match during gameplay
+- `style.css` - the game formatting and styling</code></pre></li>
+      <li>Stage and commit with <code>Start developer docs</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>If <code>git status</code> shows the wrong files staged, unstage with <code>git restore --staged &lt;filename&gt;</code>.</details>
+  </div>
+
+  <div class="step" data-step="c2-3">
+    <div class="stepno">3</div>
+    <h3>Exploring Git history <label><input type="checkbox" id="c2-3"> done</label></h3>
+    <dl class="concept">
+      <dt>What each commit contains</dt><dd><strong>Unique hash ID</strong> (reference) · <strong>parent commit</strong> (forms the chain) · <strong>author</strong> · <strong>timestamp</strong> · <strong>commit message</strong>.</dd>
+      <dt><code>HEAD</code></dt><dd>A special pointer marking your current position in history.</dd>
+    </dl>
+<pre class="mermaid">gitGraph
+   commit id: "9c6ef8a Initial commit"
+   commit id: "16ac970 Start game documentation"
+   commit id: "762ac02 Start developer docs" tag: "HEAD"</pre>
+    <div class="tbl"><table>
+      <tr><th>Command</th><th>Shows</th></tr>
+      <tr><td><code>git log</code></td><td>Detailed history</td></tr>
+      <tr><td><code>git log --oneline</code></td><td>One commit per line, less detail</td></tr>
+      <tr><td><code>git log --graph</code></td><td>Visual diagram, useful for diverging paths</td></tr>
+      <tr><td><code>git checkout &lt;id&gt;</code></td><td>Moves to another point in history (changes files in your working directory)</td></tr>
+    </table></div>
+    <div class="activity"><h4>Explore history (CLI)</h4>
+    <ol class="do">
+      <li><code>git log</code></li>
+      <li><code>git log --oneline</code></li>
+      <li><code>git log --graph --oneline</code> (more interesting once branches exist)</li>
+      <li>Copy the commit ID of <code>Initial commit</code> (long or short form both work).</li>
+      <li><code>git checkout &lt;commit id&gt;</code>: <code>README.md</code> disappears, because it did not exist then.</li>
+      <li><code>git checkout main</code>: <code>README.md</code> returns.</li>
+    </ol></div>
+    <div class="activity"><h4>Explore history (VS Code)</h4>
+    <ol class="do">
+      <li>Open <strong>Source Control</strong>.</li>
+      <li>Right-click the <strong>Changes</strong> header and enable <strong>Graph</strong>.</li>
+      <li>Inspect the timeline of recent commits in the Graph panel.</li>
+      <li>Click a commit name to list the files it modified.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Run <code>git log --help</code> for every option for viewing history.</details>
+  </div>
+
+  <div class="step" data-step="c2-4">
+    <div class="stepno">4</div>
+    <h3>Comparing changes <label><input type="checkbox" id="c2-4"> done</label></h3>
+    <p>Seeing exactly what changed <strong>before</strong> you commit is how you review your own work and catch errors.</p>
+<pre class="diff"><code><span class="a">+ This is a line that was added</span><span class="d">- This is a line that was removed</span></code></pre>
+    <div class="tbl"><table>
+      <tr><th>Command</th><th>Compares</th></tr>
+      <tr><td><code>git diff</code></td><td>Working directory ↔ staging area</td></tr>
+      <tr><td><code>git diff --staged</code></td><td>Staging area ↔ previous commit</td></tr>
+      <tr><td><code>git diff HEAD~1</code></td><td>Current commit ↔ the one before it</td></tr>
+    </table></div>
+    <div class="note"><b>Tip</b>Change diff colours:<pre><code>git config --global color.diff.old yellow
+git config --global color.diff.new blue</code></pre></div>
+    <div class="activity"><h4>View differences (CLI)</h4>
+    <ol class="do">
+      <li>Open <code>src/index.html</code>; at line 20 replace the scoring <code>info-section</code> with:<pre><code>&lt;div class="info-section"&gt;
+   &lt;h3&gt;Current Score&lt;/h3&gt;
+   &lt;div class="score" id="score"&gt;0&lt;/div&gt;
+   &lt;h3&gt;High Score&lt;/h3&gt;
+   &lt;div class="high-score" id="high-score"&gt;0&lt;/div&gt;
+&lt;/div&gt;</code></pre>This demonstrates all three change types: <em>modify</em> (Score → Current Score), <em>add</em> (High Score), <em>remove</em> (status information).</li>
+      <li><code>git diff src/index.html</code>: working directory vs last commit.</li>
+      <li><code>git add src/index.html</code></li>
+      <li><code>git diff src/index.html</code> again: nothing, because working directory now equals staging.</li>
+      <li><code>git diff --staged src/index.html</code>: staging vs last commit.</li>
+      <li><pre><code>git commit -m "Add element for showing high score"</code></pre></li>
+    </ol></div>
+    <div class="activity"><h4>View differences (VS Code)</h4>
+    <ol class="do">
+      <li>Open <code>src/patterns.js</code>; at line 3 replace the <code>Null Pointer</code> block:<pre><code>{
+  name: "Null Pointer",
+  pattern: [
+    [0, 1, 1, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+  ],
+},</code></pre></li>
+      <li>In File Explorer the file turns a different colour and shows <strong>M</strong> (modified).</li>
+      <li>In Source Control → <strong>Changes</strong>, double-click <code>patterns.js</code> to open the diff view. You can edit in the comparison view for live feedback.</li>
+      <li>Stage the file (do not commit yet). The diff view goes empty because the file now matches staging.</li>
+      <li>Under <strong>Staged Changes</strong>, double-click <code>patterns.js</code>: you cannot edit here; staging is locked ready for commit.</li>
+      <li>Commit with <code>Make null pointer pattern easier to complete</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>If the diff is longer than one screen, press <code>q</code> to exit the scrolling viewer.</details>
+  </div>
+
+  <div class="step" data-step="c2-5">
+    <div class="stepno">5</div>
+    <h3>Working with branches <label><input type="checkbox" id="c2-5"> done</label></h3>
+    <p>Questions this answers: how do I keep history tidy, keep incomplete work out of it, and work on several features or fixes at once?</p>
+    <dl class="concept">
+      <dt>Branch (in Git)</dt><dd>A lightweight pointer, like a label, to a specific commit. You work on a dependent version without influencing the original.</dd>
+      <dt><code>main</code></dt><dd>Usually the trusted working version and the first branch (historically <code>master</code>).</dd>
+      <dt>Feature branch</dt><dd>A safe, isolated space to develop without affecting the trusted version.</dd>
+      <dt>Merging</dt><dd>Combining changes from different branches.</dd>
+    </dl>
+    <h4>Three merge strategies</h4>
+    <div class="tbl"><table>
+      <tr><th>Strategy</th><th>What happens</th><th>Result from A–B on main, C–D on feature</th></tr>
+      <tr><td><strong>Fast-forward</strong></td><td>The new commits are moved onto the parent branch. Git's default for <code>git merge</code> when possible.</td><td>A → B → C → D (one straight line)</td></tr>
+      <tr><td><strong>Merge commit</strong></td><td>Changes are applied as a single new commit on the parent; the child branch stays in the network for traceability.</td><td>A → B, feature C → D, then merge commit E on main</td></tr>
+      <tr><td><strong>Squash merge</strong></td><td>All branch commits are collapsed into one new commit on the other branch.</td><td>A → B → "C+D"</td></tr>
+    </table></div>
+<pre class="mermaid">gitGraph
+   commit id: "A"
+   commit id: "B"
+   branch feature
+   commit id: "C"
+   commit id: "D"
+   checkout main
+   merge feature id: "E"</pre>
+    <div class="tbl"><table>
+      <tr><th>Command</th><th>Purpose</th></tr>
+      <tr><td><code>git branch my-new-feature</code></td><td>Start a branch from the current branch</td></tr>
+      <tr><td><code>git checkout my-new-feature</code></td><td>Switch the working directory to that branch</td></tr>
+      <tr><td><code>git merge</code></td><td>Apply one branch's commits onto another (default: fast-forward)</td></tr>
+    </table></div>
+    <div class="note"><b>Tip</b>Git 2.23 introduced <code>git switch</code> to simplify branch handling, e.g. <code>git switch branch-name</code> and <code>git switch --create &lt;branch&gt;</code>. You will see it more often.</div>
+    <div class="activity"><h4>Commit to a branch (CLI)</h4>
+    <ol class="do">
+      <li><code>git log --all --graph --oneline</code>: history is perfectly linear.</li>
+      <li><pre><code>git branch fix-incomplete-high-score
+git checkout fix-incomplete-high-score</code></pre></li>
+      <li><code>git branch --list</code></li>
+      <li>In <code>index.js</code> line 41 add, then commit:<pre><code>let highScore = 0;</code></pre><pre><code>git add src/index.js
+git commit -m "Add new variable for tracking high score"</code></pre></li>
+      <li>At line 61 add, then commit with <code>"Add loading of stored high score"</code>:<pre><code>// Load high score from localStorage
+highScore = parseInt(localStorage.getItem("stackOverflownHighScore")) || 0;
+document.getElementById("high-score").textContent = highScore;</code></pre></li>
+      <li>At line 313 replace <code>updateScore</code>, then commit with <code>"Add logic to keep track of highest score"</code>:<pre><code>function updateScore() {
+  document.getElementById("score").textContent = score;
+
+  // Update high score if current score exceeds it
+  if (score &gt; highScore) {
+    highScore = score;
+    document.getElementById("high-score").textContent = highScore;
+    localStorage.setItem("stackOverflownHighScore", highScore);
+  }
+}</code></pre></li>
+      <li><code>git log --all --graph --oneline</code>: the feature branch is three commits ahead of <code>main</code> and marked <code>HEAD</code>.</li>
+      <li><code>git checkout main</code></li>
+      <li>Merge with "no fast-forward" so the branch stays visible in history:<pre><code>git merge --no-ff fix-incomplete-high-score -m "Fix high score tracker"</code></pre></li>
+      <li><code>git log --all --graph --oneline</code>: the parallel branch is shown merged.</li>
+      <li><pre><code>git branch --delete fix-incomplete-high-score</code></pre>This removes only the name (label); the commits remain.</li>
+    </ol></div>
+    <div class="activity"><h4>Commit to a branch (VS Code)</h4>
+    <ol class="do">
+      <li>Open Source Control with the Graph panel visible.</li>
+      <li>Click the branch name <code>main</code> in the lower-left status bar.</li>
+      <li><strong>Create new branch…</strong> → <code>add-level-counter</code>.</li>
+      <li><code>index.html</code> line 21, insert and commit <code>Add element to display current level</code>:<pre><code>&lt;h3&gt;Level&lt;/h3&gt;
+&lt;div class="score" id="level"&gt;1&lt;/div&gt;</code></pre></li>
+      <li><code>index.js</code> line 42, insert and commit <code>Add variables for level and clear counter</code>:<pre><code>let level = 1;
+let patternsCleared = 0;</code></pre></li>
+      <li>Line 273, replace <code>checkPatternMatch</code> and commit <code>Add logic to calculate level</code>:<pre><code>function checkPatternMatch() {
+  for (let startRow = 0; startRow &lt;= ROWS - PATTERN_SIZE; startRow++) {
+    for (let startCol = 0; startCol &lt;= COLS - PATTERN_SIZE; startCol++) {
+      if (matchesPattern(startRow, startCol)) {
+        clearPattern(startRow, startCol);
+        score += 100;
+        patternsCleared++;
+        if (patternsCleared % 5 === 0) {
+          level++;
+          dropInterval = Math.max(200, 1000 - (level - 1) * 100);
+          document.getElementById("level").textContent = level;
+        }
+        updateScore();
+        setNewTargetPattern();
+        return;
+      }
+    }
+  }
+}</code></pre>Every fifth cleared pattern raises the level and shortens the drop interval by 100 ms, never below 200 ms.</li>
+      <li>The Graph panel now shows the new commits, the earlier branch and the original commits.</li>
+      <li>Click the branch name and switch to <code>main</code>.</li>
+      <li><strong>…</strong> → <strong>Branch</strong> → <strong>Merge…</strong>: VS Code performs a normal fast-forward merge.</li>
+      <li><strong>…</strong> → <strong>Branch</strong> → <strong>Delete Branch…</strong></li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Rename a mistyped branch with <code>git branch --move old-name new-name</code>.</details>
+  </div>
+
+  <div class="step" data-step="c2-6">
+    <div class="stepno">6</div>
+    <h3>Introduction to collaboration <label><input type="checkbox" id="c2-6"> done</label></h3>
+    <p>Because Git is distributed, copies of the same repository can share changes. A typical team workflow:</p>
+    <div class="tbl"><table>
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td><strong>Clone</strong></td><td>Copy a repository to your local machine</td></tr>
+      <tr><td><strong>Branch &amp; develop</strong></td><td>Build features on branches</td></tr>
+      <tr><td><strong>Push</strong></td><td>Publish your changes to a remote repository others can access</td></tr>
+      <tr><td><strong>Pull</strong></td><td>Others who like your changes merge them into their copy</td></tr>
+      <tr><td><strong>Pull request</strong></td><td>You proactively ask another developer to integrate your changes</td></tr>
+    </table></div>
+    <div class="activity"><h4>Quick review</h4>
+    <p>Answer Mona's question in the issue: <em>What is your favourite feature of Git?</em> Options: free and open source · works without internet · works on any operating system · detailed history (with good messages) · never writing <code>final_really.zip</code> again.</p></div>
+  </div>
+
+  <div class="review">
+    <h3>Course 2 review</h3>
+    <p>You configured Git, created a repository, staged and committed, explored history, compared changes, used branches for safe experimentation, and learned the collaboration vocabulary. Next exercises suggested: Review Pull Requests and Resolve Merge Conflicts (Courses 4 and 5 here). References: <a href="https://git-scm.com/doc">Git documentation</a>, Git Handbook.</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <h3>Check yourself</h3>
+    <div class="q" data-a="1"><p>You staged a file and ran <code>git diff</code>. Nothing shows. Why?</p><button>The file was not saved</button><button>Plain <code>git diff</code> compares working directory with staging, and they now match</button><button>Git has a bug</button><div class="why" hidden>Use <code>git diff --staged</code> to compare staging with the last commit.</div></div>
+    <div class="q" data-a="2"><p>What does <code>git branch --delete feature</code> remove after a merge?</p><button>The commits</button><button>The merged changes in main</button><button>Only the branch name (pointer)</button><div class="why" hidden>A branch is just a label; the commits stay in history.</div></div>
+    <div class="q" data-a="0"><p>Which merge keeps the feature branch visible as a parallel line in history?</p><button><code>git merge --no-ff</code> (merge commit)</button><button>Fast-forward</button><button>Squash</button><div class="why" hidden>A merge commit records both parents, so the branch shape remains.</div></div>
+    <div class="q" data-a="1"><p>Which flag sets your identity for one repository only?</p><button>--global</button><button>--local</button><button>--system</button><div class="why" hidden>Run <code>git config --local user.email …</code> inside that repository.</div></div>
+  </div>
+</section>
+
+<!-- ============ COURSE 3 ============ -->
+<section class="course" id="c3">
+  <div class="eyebrow">Course 3 · skills/communicate-using-markdown</div>
+  <h2>Communicate using Markdown</h2>
+  <p class="tag">Organise ideas and collaborate using Markdown, a lightweight language for text formatting.</p>
+  <div class="facts">
+    <div><b>Who it is for</b><span>New developers, new GitHub users, students</span></div>
+    <div><b>You learn</b><span>Headings, lists, task lists, code blocks, images, links</span></div>
+    <div><b>You build</b><span><code>day-1.md</code>, a blog post you can later publish with GitHub Pages</span></div>
+    <div><b>Prerequisites</b><span>Course 1 (pull requests, editing files)</span></div>
+  </div>
+
+  <div class="step" data-step="c3-1">
+    <div class="stepno">1</div>
+    <h3>Add headings <label><input type="checkbox" id="c3-1"> done</label></h3>
+    <dl class="concept">
+      <dt>Markdown</dt><dd>A lightweight syntax for formatting on GitHub: headings, lists, <strong>bold</strong>, <em>italics</em>, tables and more. Used in comments on issues, pull requests and discussions; in files ending <code>.md</code> or <code>.markdown</code>; and in Gists.</dd>
+      <dt>Heading</dt><dd>Larger text at the start of a section. Six sizes, <code>#</code> (h1, largest) to <code>######</code> (h6, smallest). A space after the <code>#</code> characters is required.</dd>
+    </dl>
+    <div class="pair">
+<pre><code># This is an &lt;h1&gt; heading, the largest
+## This is an &lt;h2&gt; heading
+###### This is an &lt;h6&gt; heading, the smallest</code></pre>
+      <div class="render"><div class="h1">This is an h1 heading</div><div class="h2">This is an h2 heading</div><div class="h6">This is an h6 heading</div></div>
+    </div>
+    <div class="activity"><h4>Create a Markdown file</h4>
+    <ol class="do">
+      <li>Work in a second tab.</li>
+      <li>Open the <strong>Code</strong> tab.</li>
+      <li>Create a branch named <code>start-blog</code>.</li>
+      <li><strong>Add file</strong> → <strong>Create new file</strong>, named <code>day-1.md</code>.</li>
+      <li>First line, a level-one title:<pre><code># Daily Learning</code></pre></li>
+      <li>Two level-two headings:<pre><code>## Morning Planning
+
+## Review</code></pre></li>
+      <li>Click the <strong>Preview</strong> toggle to see the rendered version.</li>
+      <li><strong>Commit changes</strong> directly to <code>start-blog</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Confirm the file and branch. There must be a space between <code>#</code> and the first word.</details>
+  </div>
+
+  <div class="step" data-step="c3-2">
+    <div class="stepno">2</div>
+    <h3>Make a list <label><input type="checkbox" id="c3-2"> done</label></h3>
+    <div class="tbl"><table>
+      <tr><th>Type</th><th>Syntax</th><th>Notes</th></tr>
+      <tr><td>Unordered (bulleted)</td><td><code>- Item</code> / <code>* Item</code> / <code>+ Item</code></td><td>One item per line</td></tr>
+      <tr><td>Ordered (numbered)</td><td><code>1. Step</code></td><td>Any number works; Markdown counts automatically, so <code>1.</code> on every line renders 1, 2, 3</td></tr>
+      <tr><td>Task (checkbox)</td><td><code>- [ ] To do</code> / <code>- [x] Done</code></td><td>The empty brackets need a space inside</td></tr>
+    </table></div>
+    <div class="pair">
+<pre><code>- [x] This task is complete
+- [ ] This task is not complete</code></pre>
+      <div class="render">☑ This task is complete<br>☐ This task is not complete</div>
+    </div>
+    <div class="note"><b>Tip</b>Issues and pull requests can use task syntax to convey progress.</div>
+    <div class="activity"><h4>Add ideas and goals to the morning plan</h4>
+    <ol class="do">
+      <li>On <code>start-blog</code>, edit <code>day-1.md</code>.</li>
+      <li>Under <strong>Morning Planning</strong>, add:<pre><code>- [ ] Check out the [github blog](https://github.blog/) for topic ideas.
+- [ ] Learn about [GitHub Pages](https://skills.github.com/#first-day-on-github).
+- [ ] Convert my first blog post into an actual webpage.</code></pre>This also introduces <strong>links</strong>: <code>[text](url)</code>.</li>
+      <li>Check with <strong>Preview</strong>, then commit to <code>start-blog</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>Confirm the file and branch; make sure there is a space inside <code>[ ]</code>.</details>
+  </div>
+
+  <div class="step" data-step="c3-3">
+    <div class="stepno">3</div>
+    <h3>Add a code sample <label><input type="checkbox" id="c3-3"> done</label></h3>
+    <dl class="concept">
+      <dt>Code block</dt><dd>Three backticks <code>```</code> above and below the code (not three apostrophes <code>'''</code>).</dd>
+      <dt>Syntax highlighting</dt><dd>Put the language name after the opening backticks: <code>```bash</code>, <code>```js</code>, and many more.</dd>
+    </dl>
+<pre><code>```bash
+git clone https://github.com/skills/communicate-using-markdown
+```
+
+```js
+var myVar = "Hello, world!";
+```</code></pre>
+    <div class="note"><b>Nesting fences</b>To show a code block <em>inside</em> another code block, wrap the outer one in four backticks (<code>````md</code>), as the course itself does.</div>
+    <div class="activity"><h4>Add a code example</h4>
+    <ol class="do">
+      <li>On <code>start-blog</code>, edit <code>day-1.md</code>.</li>
+      <li>Under <strong>Review</strong>, add:<pre><code>Convert an image or video from dark mode to light mode using [ffmpeg](https://www.ffmpeg.org)
+
+```bash
+ffmpeg -i input.mp4 -vf "negate,hue=h=180,eq=contrast=1.2:saturation=1.1" output.mp4
+```</code></pre></li>
+      <li>Preview, then commit to <code>start-blog</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>A code block uses three backticks, not three apostrophes.</details>
+  </div>
+
+  <div class="step" data-step="c3-4">
+    <div class="stepno">4</div>
+    <h3>Add an image <label><input type="checkbox" id="c3-4"> done</label></h3>
+    <dl class="concept">
+      <dt>Markdown image</dt><dd><code>![alt text](url)</code>. The URL can be <strong>relative</strong> (a file in the repository) or <strong>absolute</strong> (anywhere online). The alt text displays if the image fails to load and is read aloud by screen readers. Markdown cannot set image size.</dd>
+      <dt>HTML image</dt><dd><code>&lt;img&gt;</code> gives more control: <code>alt</code> (alternative text), <code>src</code> (source URL), <code>width</code>/<code>height</code> (pixels), <code>align</code> (<code>left</code> or <code>right</code>).</dd>
+    </dl>
+<pre><code>![Mona the Octocat](myrepo/original.png)                       &lt;!-- relative --&gt;
+![Mona the Octocat](https://octodex.github.com/images/original.png) &lt;!-- absolute --&gt;
+
+&lt;img alt="Mona the Octocat" src="https://octodex.github.com/images/original.png"
+width="200" align="right"&gt;</code></pre>
+    <div class="activity"><h4>Add some decoration</h4>
+    <ol class="do">
+      <li>On <code>start-blog</code>, edit <code>day-1.md</code>.</li>
+      <li>Below <strong>Morning Planning</strong>, insert:<pre><code>![Cloudy morning](https://octodex.github.com/images/cloud.jpg)</code></pre></li>
+      <li>Preview: the image is too large.</li>
+      <li>Replace it with the sized, positioned HTML version:<pre><code>&lt;img alt="Cloudy morning" src="https://octodex.github.com/images/cloud.jpg" width="100" align="right"&gt;</code></pre></li>
+      <li>Commit to <code>start-blog</code>.</li>
+    </ol></div>
+    <details class="trouble"><summary>Having trouble?</summary>An HTML image tag must start with <code>img</code> and include <code>src</code>.</details>
+  </div>
+
+  <div class="step" data-step="c3-5">
+    <div class="stepno">5</div>
+    <h3>Finish work: merge the blog post <label><input type="checkbox" id="c3-5"> done</label></h3>
+    <ol class="do">
+      <li>Open <strong>Pull requests</strong>.</li>
+      <li>New pull request: base <code>main</code>, compare <code>start-blog</code>.</li>
+      <li>(Optional) Give it a clear title and description.</li>
+      <li>Click <strong>Merge</strong>, then <strong>Merge pull request</strong>.</li>
+    </ol>
+    <h4>Your finished <code>day-1.md</code></h4>
+<pre><code># Daily Learning
+
+## Morning Planning
+
+&lt;img alt="Cloudy morning" src="https://octodex.github.com/images/cloud.jpg" width="100" align="right"&gt;
+
+- [ ] Check out the [github blog](https://github.blog/) for topic ideas.
+- [ ] Learn about [GitHub Pages](https://skills.github.com/#first-day-on-github).
+- [ ] Convert my first blog post into an actual webpage.
+
+## Review
+
+Convert an image or video from dark mode to light mode using [ffmpeg](https://www.ffmpeg.org)
+
+```bash
+ffmpeg -i input.mp4 -vf "negate,hue=h=180,eq=contrast=1.2:saturation=1.1" output.mp4
+```</code></pre>
+  </div>
+
+  <div class="review">
+    <h3>Course 3 review</h3>
+    <p>You added headings, a task list, a code snippet and an image, and finished a Markdown blog post. Next: the <a href="https://github.com/skills/github-pages">GitHub Pages</a> exercise to publish it as a real web page.</p>
+    <h4>Markdown at a glance</h4>
+    <div class="tbl"><table>
+      <tr><th>You want</th><th>Write</th></tr>
+      <tr><td>Heading</td><td><code># H1</code> … <code>###### H6</code></td></tr>
+      <tr><td>Bold / italic</td><td><code>**bold**</code> / <code>_italic_</code></td></tr>
+      <tr><td>Link</td><td><code>[text](https://…)</code></td></tr>
+      <tr><td>Image</td><td><code>![alt](url)</code> or <code>&lt;img src alt width align&gt;</code></td></tr>
+      <tr><td>Bullet / numbered / task</td><td><code>- x</code> / <code>1. x</code> / <code>- [ ] x</code></td></tr>
+      <tr><td>Inline code / block</td><td><code>`code`</code> / <code>```lang … ```</code></td></tr>
+      <tr><td>Callout (GitHub)</td><td><code>&gt; [!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code></td></tr>
+    </table></div>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <h3>Check yourself</h3>
+    <div class="q" data-a="2"><p>Why does <code>#Title</code> not render as a heading?</p><button>Headings need two #</button><button>Only .markdown files support headings</button><button>A space is required after #</button><div class="why" hidden>Write <code># Title</code>.</div></div>
+    <div class="q" data-a="1"><p>How do you make an image 100 px wide?</p><button><code>![alt](url =100)</code></button><button>Use an HTML <code>&lt;img&gt;</code> tag with <code>width="100"</code></button><button>It is not possible on GitHub</button><div class="why" hidden>Markdown image syntax cannot size images; HTML can.</div></div>
+    <div class="q" data-a="0"><p><code>1.</code> written on all three lines renders as…</p><button>1, 2, 3</button><button>1, 1, 1</button><button>A bulleted list</button><div class="why" hidden>Markdown numbers ordered lists automatically.</div></div>
+  </div>
+</section>
+
+<!-- ============ COURSE 4 ============ -->
+<section class="course" id="c4">
+  <div class="eyebrow">Course 4 · skills/resolve-merge-conflicts</div>
+  <h2>Resolve Merge Conflicts</h2>
+  <p class="tag">Learn why conflicts happen and how to resolve them.</p>
+  <div class="facts">
+    <div><b>Who it is for</b><span>New developers, new Git and GitHub users</span></div>
+    <div><b>You learn</b><span>Tools to inspect and resolve a conflict</span></div>
+    <div><b>You build</b><span>A fix for conflicting edits to <code>resume.md</code> in the web editor</span></div>
+    <div><b>Prerequisites</b><span>Course 1</span></div>
+  </div>
+
+  <div class="step" data-step="c4-1">
+    <div class="stepno">1</div>
+    <h3>Learn about merge conflicts <label><input type="checkbox" id="c4-1"> done</label></h3>
+    <dl class="concept">
+      <dt>Merge conflict</dt><dd>Occurs when changes are made to <strong>the same part of the same file</strong> on two different branches. It is common when working with others and need not be frightening.</dd>
+    </dl>
+<pre class="mermaid">gitGraph
+    commit id: "Initial"
+    commit id: "Add resume.md"
+    branch my-resume
+    checkout my-resume
+    commit id: "Update skills"
+    checkout main
+    commit id: "Also update skills"
+    checkout my-resume
+    commit id: "Other changes"
+    checkout main
+    merge my-resume id: "Conflict!"</pre>
+    <ol class="do">
+      <li>The repository gets a <code>resume.md</code>.</li>
+      <li>Branch <code>my-resume</code> updates the skills area.</li>
+      <li>Meanwhile someone updates the same skills area on <code>main</code>.</li>
+      <li><code>my-resume</code> gains unrelated changes too.</li>
+      <li>Merging <code>my-resume</code> into <code>main</code> conflicts: both changed the same part of <code>resume.md</code>.</li>
+    </ol>
+    <div class="activity"><h4>Create a pull request</h4>
+    <p>The exercise pre-builds this scenario for you.</p>
+    <ol class="do">
+      <li>Open the repository in a second tab.</li>
+      <li><strong>Pull requests</strong> → <strong>New pull request</strong>.</li>
+      <li>Base <code>main</code>, compare <code>my-resume</code>, title <code>Resolve a merge conflict</code>.</li>
+    </ol></div>
+  </div>
+
+  <div class="step" data-step="c4-2">
+    <div class="stepno">2</div>
+    <h3>Resolve a merge conflict <label><input type="checkbox" id="c4-2"> done</label></h3>
+    <p>Git merges intelligently and asks a human only when the situation is unclear. You have three choices:</p>
+    <div class="tbl"><table>
+      <tr><th>Option</th><th>Result</th></tr>
+      <tr><td>Accept the <strong>base</strong> branch version</td><td>Keep <code>main</code>'s text</td></tr>
+      <tr><td>Accept the <strong>compare</strong> branch version</td><td>Keep <code>my-resume</code>'s text</td></tr>
+      <tr><td><strong>Combine</strong> manually</td><td>Write a version that keeps parts of both</td></tr>
+    </table></div>
+    <dl class="concept">
+      <dt>When to resolve</dt><dd>As soon as you notice. Resolving does <strong>not</strong> merge the PR. GitHub stores the resolution as a <strong>reverse merge</strong> commit: changes from base (<code>main</code>) are merged into compare (<code>my-resume</code>). Only the compare branch changes, so you can test the result and keep working before the real merge.</dd>
+    </dl>
+<pre class="mermaid">gitGraph
+    commit id: "Initial"
+    commit id: "Add resume.md"
+    branch my-resume
+    checkout my-resume
+    commit id: "Update skills"
+    checkout main
+    commit id: "Also update skills"
+    checkout my-resume
+    commit id: "Other changes"
+    merge main id: "Resolve conflict"
+    commit id: "Continue work"
+    checkout main
+    merge my-resume id: "Success!"</pre>
+    <h4>Reading conflict markers</h4>
+<pre class="diff"><code><span class="m">&lt;&lt;&lt;&lt;&lt;&lt;&lt; my-resume          ← start: compare branch's version follows</span>- Contributed to open source projects
+<span class="m">=======                    ← divider</span>- Built internal tools
+<span class="m">&gt;&gt;&gt;&gt;&gt;&gt;&gt; main               ← end: base branch's version above this</span></code></pre>
+    <div class="activity"><h4>Resolve the conflict</h4>
+    <ol class="do">
+      <li>Open the pull request.</li>
+      <li>Scroll to the bottom; a message near the merge button says there are conflicts.</li>
+      <li>Click <strong>Resolve conflicts</strong> to open the conflict editor.</li>
+      <li>Find the highlighted block shown above.</li>
+      <li>Decide to keep the compare version: delete the content between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</code>.</li>
+      <li>Delete all three marker lines, leaving only:<pre><code>- Contributed to open source projects</code></pre></li>
+      <li>Click <strong>Mark as resolved</strong> → <strong>Commit merge</strong>.</li>
+    </ol></div>
+    <div class="note"><b>Reference</b><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">GitHub Docs: resolving a merge conflict using the command line</a>. On the CLI the same markers appear in the file; edit, then <code>git add</code> and <code>git commit</code>.</div>
+  </div>
+
+  <div class="step" data-step="c4-3">
+    <div class="stepno">3</div>
+    <h3>Merge your pull request <label><input type="checkbox" id="c4-3"> done</label></h3>
+    <ol class="do">
+      <li>Click <strong>Merge pull request</strong>.</li>
+      <li>(Optional) Delete <code>my-resume</code>.</li>
+      <li>Mona posts the final review and updates the README.</li>
+    </ol>
+  </div>
+
+  <div class="review">
+    <h3>Course 4 review</h3>
+    <p>You understand why conflicts occur, recognise when GitHub detects one in a PR, resolved one in the web editor by choosing what to keep, and merged afterwards. Suggested next: <a href="https://github.com/skills/github-pages">GitHub Pages</a>, Communicate using Markdown, Getting Started with GitHub Copilot.</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <h3>Check yourself</h3>
+    <div class="q" data-a="1"><p>Which situation causes a conflict?</p><button>Two branches edit different files</button><button>Two branches edit the same lines of the same file</button><button>One branch adds a new file</button><div class="why" hidden>Git auto-merges separate changes; only overlapping edits need a human.</div></div>
+    <div class="q" data-a="0"><p>After "Commit merge" in the conflict editor, which branch changed?</p><button>Only the compare branch (my-resume)</button><button>Only main</button><button>Both</button><div class="why" hidden>It is a reverse merge of main into the compare branch; main changes only when you merge the PR.</div></div>
+    <div class="q" data-a="2"><p>What must be gone from the file before marking it resolved?</p><button>Both versions</button><button>The heading</button><button>The <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> markers</button><div class="why" hidden>Leftover markers would be committed as literal text.</div></div>
+  </div>
+</section>
+
+<!-- ============ COURSE 5 ============ -->
+<section class="course" id="c5">
+  <div class="eyebrow">Course 5 · skills/review-pull-requests</div>
+  <h2>Review Pull Requests</h2>
+  <p class="tag">Collaborate with others to refine your work and get suggestions before merging.</p>
+  <div class="facts">
+    <div><b>Who it is for</b><span>Developers, non-technical collaborators, students, managers</span></div>
+    <div><b>You learn</b><span>Assigning, reviewing, suggesting and approving changes</span></div>
+    <div><b>You build</b><span>A reviewed PR for a simple game</span></div>
+    <div><b>Prerequisites</b><span>Course 1 (commits, branches, PRs)</span></div>
+  </div>
+
+  <div class="step" data-step="c5-1">
+    <div class="stepno">1</div>
+    <h3>Open a pull request <label><input type="checkbox" id="c5-1"> done</label></h3>
+    <dl class="concept">
+      <dt>Pull request</dt><dd>A collaboration area where work on one branch is reviewed before merging into another. Its tabs:</dd>
+    </dl>
+    <div class="tbl"><table>
+      <tr><th>Tab</th><th>Purpose</th></tr>
+      <tr><td><strong>Conversation</strong></td><td>Activity log, plus open space for ideas, suggestions and feedback</td></tr>
+      <tr><td><strong>Commits</strong></td><td>Only the commits unique to the proposed branch</td></tr>
+      <tr><td><strong>Checks</strong></td><td>Results of GitHub Actions automations on the PR</td></tr>
+      <tr><td><strong>Files changed</strong></td><td>Before/after diff view, with in-context comments and reviews</td></tr>
+    </table></div>
+    <div class="note"><b>Tip</b>Open a <strong>draft pull request</strong> for unfinished work to avoid accidental merges or premature reviews.</div>
+    <div class="activity"><h4>Create a pull request</h4>
+    <ol class="do">
+      <li>Open the repository in a second tab.</li>
+      <li><strong>Pull requests</strong> → <strong>New pull request</strong>.</li>
+      <li>Base <code>main</code>, compare <code>update-game</code> → <strong>Create pull request</strong>.</li>
+      <li>Title: <code>Update game over message</code>. Description: <code>Update the game over message so people know how to play again!</code></li>
+      <li>Click <strong>Create pull request</strong>.</li>
+    </ol></div>
+  </div>
+
+  <div class="step" data-step="c5-2">
+    <div class="stepno">2</div>
+    <h3>Assign yourself <label><input type="checkbox" id="c5-2"> done</label></h3>
+    <dl class="concept">
+      <dt>Assignee</dt><dd>The person (or people) most familiar with the proposed changes: a simple way to know whom to contact with questions. Distinct from a <strong>reviewer</strong>, who gives feedback.</dd>
+    </dl>
+    <div class="activity"><h4>Assign yourself</h4>
+    <ol class="do"><li>Open the PR.</li><li>In the right sidebar under <strong>Assignees</strong>, click <strong>assign yourself</strong>.</li></ol></div>
+  </div>
+
+  <div class="step" data-step="c5-3">
+    <div class="stepno">3</div>
+    <h3>Leave a review <label><input type="checkbox" id="c5-3"> done</label></h3>
+    <p>A review is feedback from collaborators or the community. It protects quality and momentum, and it is a way to learn the project and see how others solve problems. The best way to get one is to ask: assign a reviewer.</p>
+    <div class="tbl"><table>
+      <tr><th>Review type</th><th>Meaning</th></tr>
+      <tr><td><strong>Comment</strong></td><td>General feedback, neither approving nor rejecting</td></tr>
+      <tr><td><strong>Approve</strong></td><td>Permits merging where rulesets, code owners or other policies require approval</td></tr>
+      <tr><td><strong>Request changes</strong></td><td>The work does not yet meet expectations; re-request a review after fixing</td></tr>
+    </table></div>
+    <h4>A typical review</h4>
+    <ol class="do">
+      <li>Check the <strong>title and description</strong> are clear and concise, and convey the change and any linked issues.</li>
+      <li>Check <strong>Files changed</strong> matches the description.</li>
+      <li>For most updates, <strong>try the change</strong> to confirm it works as intended.</li>
+      <li>Follow the repository's <strong>contributing guide</strong> for review, testing and quality requirements.</li>
+    </ol>
+    <h4>Good review habits</h4>
+    <div class="tbl"><table>
+      <tr><td>Identify issues, risks and limitations</td><td>Suggest changes and improvements</td></tr>
+      <tr><td>Flag upcoming changes the PR does not account for</td><td>Ask questions to confirm shared understanding</td></tr>
+      <tr><td>Say what the author did well</td><td>Prioritise the most important feedback</td></tr>
+      <tr><td>Be concise yet meaningful</td><td>Treat the author with kindness and empathy</td></tr>
+    </table></div>
+    <div class="activity"><h4>Leave a review</h4>
+    <ol class="do">
+      <li>Open <strong>Files changed</strong> and review the change (a simple wording adjustment).</li>
+      <li>Click <strong>Submit review</strong> above the diff.</li>
+      <li>Comment <code>Looks good to me. I think this is more intuitive. Nice work!</code> and submit. You cannot <em>Approve</em> or <em>Request changes</em> on your own PR.</li>
+    </ol>
+    <div class="note warn"><b>Caution</b>Do not merge yet.</div></div>
+  </div>
+
+  <div class="step" data-step="c5-4">
+    <div class="stepno">4</div>
+    <h3>Suggest changes <label><input type="checkbox" id="c5-4"> done</label></h3>
+    <dl class="concept">
+      <dt>Suggested change</dt><dd>For small fixes (typos, rewording) that are easier to make than describe. The <strong>Add a suggestion</strong> button in the comment editor inserts a special <code>```suggestion</code> block; GitHub then shows the author a <strong>Commit suggestion</strong> button to accept it in one click, with no code editor needed.</dd>
+    </dl>
+    <div class="activity"><h4>Suggest a change</h4>
+    <ol class="do">
+      <li><strong>Files changed</strong> → find <code>index.html</code>.</li>
+      <li>Hover beside the modified line's number and click <strong>+</strong> for an inline comment.</li>
+      <li>Click <strong>Add a suggestion</strong> to insert an editable copy of the line.</li>
+      <li>Edit to match, then click <strong>Comment</strong>:<pre><code>```suggestion
+&lt;h2 hidden&gt;Game over! Want to play again?! Just click refresh. 🧑‍🚀!&lt;/h2&gt;
+```
+Let's make it a bit more friendly. 🤓</code></pre></li>
+    </ol></div>
+    <div class="activity"><h4>Apply the suggestion</h4>
+    <ol class="do">
+      <li>Go to the <strong>Conversation</strong> tab.</li>
+      <li>Click <strong>Commit suggestion</strong>.</li>
+      <li>Message: <code>Make the end game experience more friendly</code> → <strong>Commit changes</strong>.</li>
+    </ol></div>
+  </div>
+
+  <div class="step" data-step="c5-5">
+    <div class="stepno">5</div>
+    <h3>Merge your pull request <label><input type="checkbox" id="c5-5"> done</label></h3>
+    <ol class="do"><li><strong>Conversation</strong> tab.</li><li>Click <strong>Merge pull request</strong>.</li><li>(Optional) Delete <code>update-game</code>.</li></ol>
+  </div>
+
+  <div class="review">
+    <h3>Course 5 review</h3>
+    <p>You opened a PR, assigned it, reviewed it, suggested a change, applied it, and merged after feedback. When joining a new repository, ask what review practices it follows. Next: add a <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"><code>CODEOWNERS</code></a> file so reviewers are assigned to PRs automatically.</p>
+  </div>
+
+  <div class="quiz" data-quiz>
+    <h3>Check yourself</h3>
+    <div class="q" data-a="2"><p>Which review type can unblock a merge when the repository requires approval?</p><button>Comment</button><button>Request changes</button><button>Approve</button><div class="why" hidden>Approval satisfies rulesets and code-owner requirements.</div></div>
+    <div class="q" data-a="0"><p>Which PR tab lists only the commits unique to the branch?</p><button>Commits</button><button>Checks</button><button>Conversation</button><div class="why" hidden>Checks shows automation results; Conversation is the activity log.</div></div>
+    <div class="q" data-a="1"><p>What does a <code>```suggestion</code> block give the author?</p><button>An automatic merge</button><button>A one-click Commit suggestion button</button><button>A new branch</button><div class="why" hidden>The author can accept the exact edit without opening an editor.</div></div>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section class="course" id="cheat">
+  <div class="eyebrow">Reference</div>
+  <h2>Command cheat sheet</h2>
+  <div class="tbl"><table>
+    <tr><th>Task</th><th>Command</th></tr>
+    <tr><td>Check Git version / help</td><td><code>git --version</code> · <code>git --help</code></td></tr>
+    <tr><td>Set identity (all repos)</td><td><code>git config --global user.name "First Last"</code><br><code>git config --global user.email "me@example.com"</code></td></tr>
+    <tr><td>Set identity (this repo)</td><td><code>git config --local user.email "…"</code></td></tr>
+    <tr><td>View config</td><td><code>git config --global --list</code></td></tr>
+    <tr><td>Start a repository</td><td><code>git init</code></td></tr>
+    <tr><td>Status</td><td><code>git status</code></td></tr>
+    <tr><td>Stage</td><td><code>git add &lt;file&gt;</code> · <code>git add src/*</code></td></tr>
+    <tr><td>Unstage</td><td><code>git restore --staged &lt;file&gt;</code></td></tr>
+    <tr><td>Commit</td><td><code>git commit -m "message"</code></td></tr>
+    <tr><td>History</td><td><code>git log</code> · <code>--oneline</code> · <code>--graph</code> · <code>--all --graph --oneline</code></td></tr>
+    <tr><td>Go to an old version / back</td><td><code>git checkout &lt;id&gt;</code> · <code>git checkout main</code></td></tr>
+    <tr><td>Diff</td><td><code>git diff</code> · <code>git diff --staged</code> · <code>git diff HEAD~1</code></td></tr>
+    <tr><td>Diff colours</td><td><code>git config --global color.diff.old yellow</code></td></tr>
+    <tr><td>Create / switch branch</td><td><code>git branch name</code> + <code>git checkout name</code> · or <code>git switch --create name</code></td></tr>
+    <tr><td>List / rename / delete branch</td><td><code>git branch --list</code> · <code>git branch --move old new</code> · <code>git branch --delete name</code></td></tr>
+    <tr><td>Merge</td><td><code>git merge name</code> (fast-forward) · <code>git merge --no-ff name -m "msg"</code></td></tr>
+    <tr><td>Exit a long log/diff</td><td><code>q</code></td></tr>
+  </table></div>
+</section>
+
+<section class="course" id="gloss">
+  <div class="eyebrow">Reference</div>
+  <h2>Glossary</h2>
+  <div class="tbl"><table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td>Repository</td><td>A project's files and folders plus their full version history</td></tr>
+    <tr><td>Branch</td><td>A parallel line of work; in Git, a movable pointer to a commit</td></tr>
+    <tr><td><code>main</code></td><td>The default, trusted branch (formerly <code>master</code>)</td></tr>
+    <tr><td>Commit</td><td>A recorded set of changes with hash, parent, author, timestamp, message</td></tr>
+    <tr><td>HEAD</td><td>Pointer to your current position in history</td></tr>
+    <tr><td>Working directory / staging area</td><td>Where you edit / where you group changes before committing</td></tr>
+    <tr><td>Diff</td><td>Line-by-line view of what was added (+) and removed (−)</td></tr>
+    <tr><td>Pull request</td><td>A proposal to merge one branch into another, with review tools</td></tr>
+    <tr><td>Base / compare</td><td>Destination branch / branch holding the changes</td></tr>
+    <tr><td>Merge (fast-forward, merge commit, squash)</td><td>Ways of combining branch histories</td></tr>
+    <tr><td>Merge conflict</td><td>Overlapping edits to the same lines on two branches</td></tr>
+    <tr><td>Reverse merge</td><td>Merging base into compare to resolve conflicts before the real merge</td></tr>
+    <tr><td>Assignee / reviewer</td><td>Owner of the PR's changes / person giving feedback</td></tr>
+    <tr><td>Suggested change</td><td>A review comment the author can commit in one click</td></tr>
+    <tr><td>Draft PR</td><td>A PR marked unfinished to prevent premature merge or review</td></tr>
+    <tr><td>Clone / push / pull</td><td>Copy a remote locally / publish to remote / bring remote changes in</td></tr>
+    <tr><td>Codespace</td><td>A cloud-hosted VS Code environment for a repository</td></tr>
+    <tr><td>GitHub Actions</td><td>Automation that runs workflows (Mona's checks, PR Checks tab)</td></tr>
+    <tr><td>CODEOWNERS</td><td>File that auto-requests reviewers for paths in a repository</td></tr>
+    <tr><td>Profile README</td><td><code>README.md</code> in a public repo named after your username, shown on your profile</td></tr>
+  </table></div>
+</section>
+
+<footer>Source: GitHub Skills course repositories <code>skills/introduction-to-github</code>, <code>introduction-to-git</code>, <code>communicate-using-markdown</code>, <code>resolve-merge-conflicts</code>, <code>review-pull-requests</code> (MIT licence). Step progress is saved in this browser only.</footer>
+</main>
+</div>
+
+<script>
+(function(){
+  var KEY='ghskills-week-progress', state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]'));
+  function render(){
+    var done=0, per={};
+    boxes.forEach(function(b){
+      var on=!!state[b.id]; b.checked=on;
+      b.closest('.step').classList.toggle('done',on);
+      var c=b.id.split('-')[0]; per[c]=per[c]||[0,0]; per[c][1]++; if(on){per[c][0]++;done++;}
+    });
+    document.getElementById('barfill').style.width=(done/boxes.length*100)+'%';
+    document.getElementById('bartext').textContent=done+' of '+boxes.length+' steps';
+    Object.keys(per).forEach(function(c){var el=document.querySelector('[data-pg="'+c+'"]'); if(el) el.textContent=per[c][0]+'/'+per[c][1];});
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){state[b.id]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}render();});});
+  render();
+  document.querySelectorAll('.q').forEach(function(q){
+    var ans=+q.dataset.a, btns=[].slice.call(q.querySelectorAll('button'));
+    btns.forEach(function(b,i){b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('ok','no')});
+      b.classList.add(i===ans?'ok':'no'); if(i!==ans) btns[ans].classList.add('ok');
+      q.querySelector('.why').hidden=false;
+    });});
+  });
+})();
+</script>
+
+<!--claude-mermaid-runtime-begin:3477-->
+<style>.mermaid-diagram{margin-block:4px}.mermaid-diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}</style>
+<script src="/_runtime/mermaid-11.16.1.min.js"></script>
+<script>(function(){
+var CFG={"palettes":{"light":{"surface":"#f4efe4","text":"#42392e","line":"#8a7f6d","border":"#7a6c52","bg":"#fffdf8"},"dark":{"surface":"#262b34","text":"#f2f3f5","line":"#a8adb8","border":"#9aa4b8","bg":"#1f232b"}}};
+if(typeof mermaid==='undefined')return;
+var pres=Array.prototype.slice.call(document.querySelectorAll('pre.mermaid')).filter(function(p){if(p.hasAttribute('data-claude-mermaid-claimed'))return false;p.setAttribute('data-claude-mermaid-claimed','1');return true;});
+if(!pres.length)return;
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var root=document.documentElement;
+var items=pres.map(function(pre){
+var mount=document.createElement('div');mount.className='mermaid-diagram';
+return {pre:pre,mount:mount,src:pre.textContent||''};
+});
+var seq=0;
+var renderGen=0;
+var lastKey='';
+function pageBg(fallback){
+var els=[document.body,document.documentElement];
+for(var i=0;i<els.length;i++){
+var c=els[i]&&getComputedStyle(els[i]).backgroundColor;
+if(c&&c!=='transparent'&&c!=='rgba(0, 0, 0, 0)')return c;
+}
+return fallback;
+}
+function render(){
+var theme=root.getAttribute('data-theme');
+var dark=theme==='dark'||(!!(mq&&mq.matches)&&theme!=='light');
+var pal=dark?CFG.palettes.dark:CFG.palettes.light;
+var bg=pageBg(pal.bg);
+var key=(dark?'d':'l')+'|'+bg;
+if(key===lastKey)return;
+lastKey=key;
+var gen=++renderGen;
+var font=getComputedStyle(document.body).fontFamily||'sans-serif';
+var nat={useMaxWidth:false};
+mermaid.initialize({
+startOnLoad:false,securityLevel:'strict',theme:'base',
+flowchart:nat,sequence:nat,er:nat,state:nat,class:nat,pie:nat,
+gantt:nat,journey:nat,timeline:nat,gitGraph:nat,mindmap:nat,xyChart:nat,
+quadrantChart:nat,sankey:nat,c4:nat,requirement:nat,block:nat,
+packet:nat,kanban:nat,architecture:nat,radar:nat,
+themeVariables:{background:bg,mainBkg:pal.surface,primaryColor:pal.surface,
+primaryTextColor:pal.text,lineColor:pal.line,primaryBorderColor:pal.border,
+nodeBorder:pal.border,clusterBorder:pal.border,edgeLabelBackground:bg,
+clusterBkg:'rgba(127,127,127,0.07)',titleColor:pal.text,
+darkMode:dark,rowOdd:bg,rowEven:'rgba(127,127,127,0.07)',
+attributeBackgroundColorOdd:bg,attributeBackgroundColorEven:'rgba(127,127,127,0.07)',
+fontSize:'16px',fontFamily:font},
+themeCSS:'.node rect, .node circle, .node polygon, .node path, .cluster rect { stroke-width: 2px; }'
+});
+items.forEach(function(it){
+var id='claude-mermaid-'+seq++;
+mermaid.render(id,it.src).then(function(r){
+if(gen!==renderGen)return;
+var prev=it.pre.previousElementSibling;
+if(prev&&prev.className==='mermaid-diagram'&&prev!==it.mount)return;
+it.mount.innerHTML=r.svg;
+if(!it.mount.parentNode)it.pre.parentNode.insertBefore(it.mount,it.pre);
+it.pre.style.display='none';
+},function(){
+var scratch=document.getElementById(id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+scratch=document.getElementById('d'+id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+if(gen!==renderGen)return;
+if(it.mount.parentNode)it.mount.parentNode.removeChild(it.mount);
+it.pre.style.display='';
+});
+});
+}
+render();
+if(mq&&mq.addEventListener)mq.addEventListener('change',render);
+if(typeof MutationObserver!=='undefined')new MutationObserver(render).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();</script>
+<!--claude-mermaid-runtime-end-->
+
+</body></html>
