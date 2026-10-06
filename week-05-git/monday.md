@@ -5,7 +5,7 @@ check git identity
 git config --global --list
 
 git config --global user.name "Xdrk14"
-git config --global -.name "xdrk14@gmail.com"
+git config --global -user.email "xdrk14@gmail.com"
 
 git init :Start a new repository to enable versioning
 git add	:Group related changes in the staging area, ready to commit
@@ -36,6 +36,7 @@ Push	Publish your changes to a remote repository others can access
 Pull	Others who like your changes merge them into their copy
 Pull request	You proactively ask another developer to integrate your changes
 
+git pull = git fetch + git merge
 
 Unordered (bulleted)	- Item / * Item / + Item	One item per line
 Ordered (numbered)	1. Step	Any number works; Markdown counts automatically, so 1. on every line renders 1, 2, 3
